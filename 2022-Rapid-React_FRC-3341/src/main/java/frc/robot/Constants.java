@@ -25,4 +25,7 @@ public final class Constants
         public static final int YAxis = 1;
         public static final int XAxis = 0;
     }
-}
+    public static class I2CAddresses {
+        public static final int MaxbotixUltrasonicSensor = 112;
+    } 
+
