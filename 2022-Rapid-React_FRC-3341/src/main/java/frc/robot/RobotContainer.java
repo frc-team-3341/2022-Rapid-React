@@ -5,9 +5,10 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-
+import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.MaxbotixUltrasonicSensor;
 
@@ -19,11 +20,20 @@ import frc.robot.subsystems.MaxbotixUltrasonicSensor;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  MaxbotixUltrasonicSensor ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
-  static Limelight limelight = new Limelight();
+  private static MaxbotixUltrasonicSensor ultrasonicSensor;
+  private static Limelight limelight;
+  private static Arm arm;
+
+  public static Joystick joy1;
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
+    ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
+    limelight = new Limelight();
+    arm = new Arm();
+
+    joy1 = new Joystick(0);
     configureButtonBindings();
   }
 
@@ -47,5 +57,9 @@ public class RobotContainer {
 
   public static Limelight getLimelight(){
     return limelight;
+  }
+
+  public static Joystick getJoy1(){
+    return joy1;
   }
 }
