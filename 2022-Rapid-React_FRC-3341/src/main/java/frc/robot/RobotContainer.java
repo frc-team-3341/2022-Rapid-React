@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 
+import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.MaxbotixUltrasonicSensor;
 
 /**
@@ -19,6 +20,7 @@ import frc.robot.subsystems.MaxbotixUltrasonicSensor;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   MaxbotixUltrasonicSensor ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
+  static Limelight limelight = new Limelight();
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -41,5 +43,9 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
     return null;
+  }
+
+  public static Limelight getLimelight(){
+    return limelight;
   }
 }
