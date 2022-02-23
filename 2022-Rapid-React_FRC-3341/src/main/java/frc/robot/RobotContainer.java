@@ -68,8 +68,9 @@ public class RobotContainer {
     _DriveTrain = new DriveTrain();
     
     _tankDrive = new TankDrive(_DriveTrain, _leftJoystick, _rightJoystick);
-    _DriveTrain.setDefaultCommand(_tankDrive);
     _arcadeDrive = new ArcadeDrive(_DriveTrain, _leftJoystick);
+    _DriveTrain.setDefaultCommand(_arcadeDrive);
+    
     driveForward = new AutoDriveForward(_DriveTrain, -100);
     autoPath = new AutoPath();
     test = new testTicksToCm(_DriveTrain);

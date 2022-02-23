@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -28,8 +29,8 @@ public class DriveTrain extends SubsystemBase
   private final VictorSPX _rightDriveVictor;
 
   private AHRS navx = new AHRS(SPI.Port.kMXP);
-  private double ticksToCm  = 127/10581; //will test constant later
-  private final int ticksInOneRevolution = 4096; 
+  private double ticksToCm  = 127.0/10581.0; //will test constant later
+  private DifferentialDrive _diffDrive;
  
   public DriveTrain() 
   {
@@ -46,7 +47,7 @@ public class DriveTrain extends SubsystemBase
     _leftDriveVictor.setInverted(InvertType.FollowMaster);
     _rightDriveVictor.setInverted(InvertType.FollowMaster);
 
-
+    _diffDrive = new DifferentialDrive(_leftDriveTalon, _rightDriveTalon);
 
     _leftDriveTalon.configFactoryDefault();
     _leftDriveTalon.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
@@ -72,7 +73,7 @@ public class DriveTrain extends SubsystemBase
   }
 
   public void arcadeDrive(double speed, double turn) {
-    //_diffDrive.arcadeDrive(speed, turn);
+    _diffDrive.arcadeDrive(speed, turn);
   }
 
   public void resetEncoders() {
@@ -104,12 +105,7 @@ public class DriveTrain extends SubsystemBase
   }
 
   @Override
-  public void periodic() 
-  {
-    // This method will be called once per scheduler run
-    //arcadeDrive(0.8 * RobotContainer.getLeftJoy().getRawAxis(Constants.JoystickAxis.XAxis),
-    //0.8 * RobotContainer.getLeftJoy().getRawAxis(Constants.JoystickAxis.YAxis));    System.out.println("PERIODIC RUNNING");
-  }
+  public void periodic() {}
 
   @Override
   public void simulationPeriodic() 
