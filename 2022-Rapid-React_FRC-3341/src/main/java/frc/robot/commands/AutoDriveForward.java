@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrain;
@@ -17,20 +16,29 @@ public class AutoDriveForward extends CommandBase
   private double distance;
   private double speed;
   private double error;
-  private double kP = 0.8; //test constant later
+  private double kP = 0.7; //test constant later
+  private int direction; //0 for forward, 1 for backward
 
   public AutoDriveForward(DriveTrain dt, double dist) 
   {
-    distance = dist;
+    distance = Math.abs(dist);
     _DriveTrain = dt;
     addRequirements(_DriveTrain);
+    if(dist < 0)
+    {
+      direction = 1;
+    }
+    if(dist > 0)
+    {
+      direction = 0;
+    }
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() 
   {
-
+    _DriveTrain.resetEncoders();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -38,13 +46,13 @@ public class AutoDriveForward extends CommandBase
   public void execute() 
   {
     SmartDashboard.putNumber("Ticks", _DriveTrain.getTicks());
-    error = distance - _DriveTrain.getPosition();
+    error = distance - Math.abs(_DriveTrain.getPosition());
     error = (error / distance)*2;
     speed = error * kP;
 
-    if(speed > .7)
+    if(speed > .5)
     {
-      speed = .7;
+      speed = .5;
     }
 
     if(speed < .2)
@@ -54,7 +62,17 @@ public class AutoDriveForward extends CommandBase
 
     SmartDashboard.putNumber("Current Speed", speed);
     SmartDashboard.putNumber("Current Distance", _DriveTrain.getPosition());
-    _DriveTrain.tankDrive(speed,speed);
+    if(direction == 1)
+    {
+      _DriveTrain.tankDrive(-speed,-speed);
+    }
+    if(direction == 0)
+    {
+      _DriveTrain.tankDrive(speed,speed);
+    }
+
+    System.out.println(speed);
+    System.out.println("EXECUTING");
   }
 
   // Called once the command ends or is interrupted.
@@ -68,6 +86,6 @@ public class AutoDriveForward extends CommandBase
   @Override
   public boolean isFinished() 
   {
-    return _DriveTrain.getPosition() >= distance;
+    return Math.abs(_DriveTrain.getPosition()) >= distance;
   }
 }
