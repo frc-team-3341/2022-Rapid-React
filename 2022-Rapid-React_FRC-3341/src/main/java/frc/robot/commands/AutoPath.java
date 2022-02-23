@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 
@@ -13,6 +12,7 @@ public class AutoPath extends SequentialCommandGroup
 {
     public AutoPath()
     {
-        addCommands(new AutoDriveForward(RobotContainer.getDriveTrain(), 2.3));
+        System.out.print("PATH RUN!");
+        addCommands(new AutoDriveForward(RobotContainer.getDriveTrain(), 100));
     }
 }
