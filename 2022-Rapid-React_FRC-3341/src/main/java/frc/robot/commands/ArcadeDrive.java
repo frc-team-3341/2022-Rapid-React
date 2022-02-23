@@ -32,7 +32,6 @@ public class ArcadeDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    SmartDashboard.putBoolean("isRunning", true);
     _driveTrain.arcadeDrive(0.8 * _Joystick.getRawAxis(Constants.JoystickAxis.XAxis),
       0.8 * _Joystick.getRawAxis(Constants.JoystickAxis.YAxis));
   }

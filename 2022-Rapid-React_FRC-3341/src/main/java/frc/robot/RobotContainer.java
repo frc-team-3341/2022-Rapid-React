@@ -20,6 +20,7 @@ import frc.robot.commands.TankDrive;
 import frc.robot.commands.AutoPath;
 import frc.robot.commands.AutoDriveForward;
 import frc.robot.commands.TurnGyroPID;
+import frc.robot.commands.testTicksToCm;
 
 
 /**
@@ -44,6 +45,7 @@ public class RobotContainer {
   private final Joystick _rightJoystick;
 
   private static AutoDriveForward driveForward;
+  private static testTicksToCm test;
 
   private final TankDrive _tankDrive;
   private final ArcadeDrive _arcadeDrive;
@@ -61,8 +63,8 @@ public class RobotContainer {
     redPipeline = new JoystickButton(joy1, 3);
     bluePipeline = new JoystickButton(joy1, 4);
 
-    _leftJoystick = new Joystick(Constants.USBOrder.Two);
-    _rightJoystick = new Joystick(Constants.USBOrder.Three);
+    _leftJoystick = new Joystick(Constants.USBOrder.Zero);
+    _rightJoystick = new Joystick(Constants.USBOrder.One);
     _DriveTrain = new DriveTrain();
     
     _tankDrive = new TankDrive(_DriveTrain, _leftJoystick, _rightJoystick);
@@ -70,6 +72,7 @@ public class RobotContainer {
     _arcadeDrive = new ArcadeDrive(_DriveTrain, _leftJoystick);
     driveForward = new AutoDriveForward(_DriveTrain, -100);
     autoPath = new AutoPath();
+    test = new testTicksToCm(_DriveTrain);
 
     configureButtonBindings();
   }
@@ -89,7 +92,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return autoPath;
+    return test;
   }
 
   public static DriveTrain getDriveTrain(){

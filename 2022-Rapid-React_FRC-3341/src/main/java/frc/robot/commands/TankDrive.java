@@ -35,13 +35,7 @@ public class TankDrive extends CommandBase {
   @Override
   public void execute() 
   {
-    SmartDashboard.putBoolean("isRunning", true);
     _driveTrain.tankDrive(-0.8 * _leftJoystick.getRawAxis(Constants.JoystickAxis.YAxis), -0.8 * _rightJoystick.getRawAxis(Constants.JoystickAxis.YAxis)); 
-    
-    SmartDashboard.putNumber("Current Ticks", _driveTrain.getTicks());
-    SmartDashboard.putNumber("Current Distance Tank", _driveTrain.getPosition());                   
-    
-    
   }
                         
   // Called once the command ends or is interrupted.
