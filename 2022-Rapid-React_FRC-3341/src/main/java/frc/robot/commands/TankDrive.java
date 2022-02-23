@@ -8,6 +8,8 @@ import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.Constants;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
   
 
 /** An example command that uses an example subsystem. */
@@ -31,12 +33,17 @@ public class TankDrive extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    System.out.println("TankDrive");
-    _driveTrain.tankDrive(-0.8 * _leftJoystick.getRawAxis(Constants.JoystickAxis.YAxis),
-                          -0.8 * _rightJoystick.getRawAxis(Constants.JoystickAxis.YAxis)); 
+  public void execute() 
+  {
+    SmartDashboard.putBoolean("isRunning", true);
+    _driveTrain.tankDrive(-0.8 * _leftJoystick.getRawAxis(Constants.JoystickAxis.YAxis), -0.8 * _rightJoystick.getRawAxis(Constants.JoystickAxis.YAxis)); 
+    
+    SmartDashboard.putNumber("Current Ticks", _driveTrain.getTicks());
+    SmartDashboard.putNumber("Current Distance Tank", _driveTrain.getPosition());                   
+    
+    
   }
-
+                        
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}
