@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.MaxbotixUltrasonicSensor;
@@ -25,6 +26,8 @@ public class RobotContainer {
   private static Arm arm;
 
   public static Joystick joy1;
+  public static JoystickButton redPipeline;
+  public static JoystickButton bluePipeline;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -34,7 +37,11 @@ public class RobotContainer {
     arm = new Arm();
 
     joy1 = new Joystick(0);
+    redPipeline = new JoystickButton(joy1, 3);
+    bluePipeline = new JoystickButton(joy1, 4);
     configureButtonBindings();
+
+    
   }
 
   /**

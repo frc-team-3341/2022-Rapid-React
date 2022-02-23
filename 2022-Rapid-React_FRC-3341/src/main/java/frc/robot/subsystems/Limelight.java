@@ -34,8 +34,25 @@ public class Limelight extends SubsystemBase {
     SmartDashboard.putNumber("LimelightArea", area);
   }
 
+  public void setRedPipeline(){
+    table.getEntry("pipeline").setNumber(0);
+  }
+
+  public void setBluePipeline(){
+    table.getEntry("pipeline").setNumber(1);
+  }
+
+  public void setTapePipeline(){
+    table.getEntry("pipeline").setNumber(2);
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run 
+    update();
+    //setBluePipeline();
+    //setRedPipeline();
+    setTapePipeline();
+    
   }
 }

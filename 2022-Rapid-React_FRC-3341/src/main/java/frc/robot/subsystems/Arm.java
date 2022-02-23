@@ -72,12 +72,12 @@ public class Arm extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
 
-    SmartDashboard.putNumber("FwdLS:", isFwdLSClosed());
-    SmartDashboard.putNumber("RevLS:", isRevLSClosed());
+    //SmartDashboard.putNumber("FwdLS:", isFwdLSClosed());
+    //SmartDashboard.putNumber("RevLS:", isRevLSClosed());
 
-    SmartDashboard.putNumber("RotTicks:", getArmTicks());
+    //SmartDashboard.putNumber("RotTicks:", getArmTicks());
 
     //extendPow(RobotContainer.getJoy1().getY());
-    rotatePow(RobotContainer.getJoy1().getY());
+    //rotatePow(RobotContainer.getJoy1().getY() * 0.01);
   }
 }
