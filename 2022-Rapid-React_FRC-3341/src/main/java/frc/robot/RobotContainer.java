@@ -18,6 +18,7 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.TankDrive;
 import frc.robot.commands.AutoPath;
+import frc.robot.commands.RotatePID;
 import frc.robot.commands.AutoDriveForward;
 import frc.robot.commands.TurnGyroPID;
 import frc.robot.commands.testTicksToCm;
@@ -46,6 +47,7 @@ public class RobotContainer {
 
   private static AutoDriveForward driveForward;
   private static testTicksToCm test;
+  private static RotatePID rotatePID;
 
   private final TankDrive _tankDrive;
   private final ArcadeDrive _arcadeDrive;
@@ -58,6 +60,7 @@ public class RobotContainer {
     ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
     limelight = new Limelight();
     arm = new Arm();
+    rotatePID = new RotatePID(30);
 
     joy1 = new Joystick(0);
     redPipeline = new JoystickButton(joy1, 3);
@@ -93,7 +96,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return test;
+    return rotatePID;
   }
 
   public static DriveTrain getDriveTrain(){
@@ -102,6 +105,10 @@ public class RobotContainer {
 
   public static Limelight getLimelight(){
     return limelight;
+  }
+
+  public static Arm getArm(){
+    return arm;
   }
 
   public static Joystick getJoy1(){
