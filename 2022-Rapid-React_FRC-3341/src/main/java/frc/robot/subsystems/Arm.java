@@ -73,6 +73,10 @@ public class Arm extends SubsystemBase {
     rotate.setSelectedSensorPosition(0, 0, 10);
   }
 
+  public double getArmExtCurrent(){
+    return extend.getSupplyCurrent();
+  }
+
   public void setArmBrake(boolean brake){
     if(brake){
       rotate.setNeutralMode(NeutralMode.Brake);
@@ -92,13 +96,16 @@ public class Arm extends SubsystemBase {
   public void armCount(){
     if(armPower > 0){
       if(!armExtPrevState && input.get()){
-          armExtPos++;
+          SmartDashboard.putString("PosExt", "posExt!");
+          armExtPos--;
       }
     }else if(armPower < 0){
       if(!armExtPrevState && input.get()){
-          armExtPos--;
+         SmartDashboard.putString("NegExt", "negExt!");
+          armExtPos++;
     }
     }
+    armExtPrevState = input.get();
   }
 
   public int getArmExtPos(){
@@ -115,12 +122,15 @@ public class Arm extends SubsystemBase {
     SmartDashboard.putNumber("RotTicks:", getArmTicks());
     SmartDashboard.putNumber("RotPos:", getArmPosition());
     SmartDashboard.putNumber("ArmExtPos:", getArmExtPos());
+    SmartDashboard.putNumber("ArmPower:", armPower);
 
     if (isRevLSClosed() == 0){
       resetArm();  
     }
 
-    extendPow(-RobotContainer.getJoy1().getY() * 0.5);
-    //rotatePow(RobotContainer.getJoy1().getX() * 0.5);
+    armCount();
+
+    extendPow(RobotContainer.getJoy1().getY() * 0.5);
+    rotatePow(RobotContainer.getJoy1().getX() * 0.1);
   }
 }
