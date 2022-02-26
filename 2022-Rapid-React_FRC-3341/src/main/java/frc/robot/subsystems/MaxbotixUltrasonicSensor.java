@@ -52,8 +52,6 @@ public class MaxbotixUltrasonicSensor extends SubsystemBase {
       SmartDashboard.putNumber("Range", finalDistance);
     }
 
-    System.out.println("PERIODIC RUNNING");
-
   }
 
   private void requestDistanceValue() {

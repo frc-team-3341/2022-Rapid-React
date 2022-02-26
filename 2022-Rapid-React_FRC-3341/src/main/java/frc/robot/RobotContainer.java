@@ -21,6 +21,7 @@ import frc.robot.commands.AutoPath;
 import frc.robot.commands.RotatePID;
 import frc.robot.commands.AutoDriveForward;
 import frc.robot.commands.TurnGyroPID;
+import frc.robot.commands.testAccumulate;
 import frc.robot.commands.testTicksToCm;
 
 
@@ -39,20 +40,26 @@ public class RobotContainer {
   public static Joystick joy1;
   public static JoystickButton redPipeline;
   public static JoystickButton bluePipeline;
+  public static JoystickButton rotate20;
 
-  private static DriveTrain _DriveTrain;
-  
+
+  private static RotatePID rotatePID;
+  private static testAccumulate test;
   private final Joystick _leftJoystick;
   private final Joystick _rightJoystick;
 
+  /*private static DriveTrain _DriveTrain;
+  
+  
+
   private static AutoDriveForward driveForward;
   private static testTicksToCm test;
-  private static RotatePID rotatePID;
+  
 
   private final TankDrive _tankDrive;
   private final ArcadeDrive _arcadeDrive;
 
-  private static AutoPath autoPath;
+  private static AutoPath autoPath;*/
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -60,23 +67,25 @@ public class RobotContainer {
     ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
     limelight = new Limelight();
     arm = new Arm();
-    rotatePID = new RotatePID(30);
+    test = new testAccumulate();
+    rotatePID = new RotatePID(20);
 
     joy1 = new Joystick(0);
+    rotate20 = new JoystickButton(joy1, 1);
     redPipeline = new JoystickButton(joy1, 3);
     bluePipeline = new JoystickButton(joy1, 4);
 
     _leftJoystick = new Joystick(Constants.USBOrder.Zero);
     _rightJoystick = new Joystick(Constants.USBOrder.One);
-    _DriveTrain = new DriveTrain();
+   // _DriveTrain = new DriveTrain();
     
-    _tankDrive = new TankDrive(_DriveTrain, _leftJoystick, _rightJoystick);
-    _arcadeDrive = new ArcadeDrive(_DriveTrain, _leftJoystick);
-    _DriveTrain.setDefaultCommand(_arcadeDrive);
+    //_tankDrive = new TankDrive(_DriveTrain, _leftJoystick, _rightJoystick);
+    //_arcadeDrive = new ArcadeDrive(_DriveTrain, _leftJoystick);
+    //_DriveTrain.setDefaultCommand(_arcadeDrive);
     
-    driveForward = new AutoDriveForward(_DriveTrain, -100);
-    autoPath = new AutoPath();
-    test = new testTicksToCm(_DriveTrain);
+    //driveForward = new AutoDriveForward(_DriveTrain, -100);
+    //autoPath = new AutoPath();
+    //test = new testTicksToCm(_DriveTrain);
 
     configureButtonBindings();
   }
@@ -87,7 +96,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+    rotate20.whenPressed(new RotatePID(20));
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
@@ -99,9 +110,9 @@ public class RobotContainer {
     return rotatePID;
   }
 
-  public static DriveTrain getDriveTrain(){
+  /*public static DriveTrain getDriveTrain(){
     return _DriveTrain;
-  }
+  }*/
 
   public static Limelight getLimelight(){
     return limelight;

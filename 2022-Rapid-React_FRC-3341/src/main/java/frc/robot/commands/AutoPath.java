@@ -13,6 +13,6 @@ public class AutoPath extends SequentialCommandGroup
     public AutoPath()
     {
         System.out.print("PATH RUN!");
-        addCommands(new AutoDriveForward(RobotContainer.getDriveTrain(), 100));
+        //addCommands(new AutoDriveForward(RobotContainer.getDriveTrain(), 100));
     }
 }

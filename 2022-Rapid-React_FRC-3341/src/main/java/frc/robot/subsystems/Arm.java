@@ -96,12 +96,10 @@ public class Arm extends SubsystemBase {
   public void armCount(){
     if(armPower > 0){
       if(!armExtPrevState && input.get()){
-          SmartDashboard.putString("PosExt", "posExt!");
           armExtPos--;
       }
     }else if(armPower < 0){
       if(!armExtPrevState && input.get()){
-         SmartDashboard.putString("NegExt", "negExt!");
           armExtPos++;
     }
     }
@@ -110,6 +108,14 @@ public class Arm extends SubsystemBase {
 
   public int getArmExtPos(){
     return armExtPos;
+  }
+
+  public int getArmMaxPos(){
+    return maxArmState;
+  }
+
+  public int getArmMinPos(){
+    return minArmState;
   }
 
   @Override
@@ -130,7 +136,7 @@ public class Arm extends SubsystemBase {
 
     armCount();
 
-    extendPow(RobotContainer.getJoy1().getY() * 0.5);
-    rotatePow(RobotContainer.getJoy1().getX() * 0.1);
+    //extendPow(RobotContainer.getJoy1().getY() * 0.5);
+    rotatePow(RobotContainer.getJoy1().getY() * 0.3);
   }
 }
