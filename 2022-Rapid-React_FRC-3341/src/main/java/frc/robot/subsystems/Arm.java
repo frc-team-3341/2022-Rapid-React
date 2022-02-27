@@ -6,7 +6,7 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
@@ -21,7 +21,7 @@ public class Arm extends SubsystemBase {
   /** Creates a new Arm. */
   private final WPI_TalonSRX extend;
   private final WPI_TalonSRX rotate;
-  private final DigitalInput input;
+  private final AnalogInput input;
 
   //arm variables
   private int armExtPos;
@@ -31,12 +31,12 @@ public class Arm extends SubsystemBase {
   private final int maxArmState = 5;
 
   public Arm() {
-    input = new DigitalInput(0);
+    input = new AnalogInput(0);
     armExtPos = 0;
     armPower = 0;
-    armExtPrevState = input.get();
+    armExtPrevState = isOnTape();
 
-    if(armExtPrevState == true) armExtPos++; 
+    if(armExtPrevState) armExtPos++; 
 
     extend = new WPI_TalonSRX(1);
     rotate = new WPI_TalonSRX(4);
@@ -50,6 +50,10 @@ public class Arm extends SubsystemBase {
     rotate.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 10);
     rotate.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     rotate.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
+  }
+
+  public boolean isOnTape(){
+    return input.getValue() > 150;
   }
 
   public void extendPow(double power){
@@ -95,15 +99,15 @@ public class Arm extends SubsystemBase {
 
   public void armCount(){
     if(armPower > 0){
-      if(!armExtPrevState && input.get()){
+      if(!armExtPrevState && isOnTape()){
           armExtPos--;
       }
     }else if(armPower < 0){
-      if(!armExtPrevState && input.get()){
+      if(!armExtPrevState && isOnTape()){
           armExtPos++;
     }
     }
-    armExtPrevState = input.get();
+    armExtPrevState = isOnTape();
   }
 
   public int getArmExtPos(){
@@ -124,9 +128,7 @@ public class Arm extends SubsystemBase {
 
     SmartDashboard.putNumber("FwdLS:", isFwdLSClosed());
     SmartDashboard.putNumber("RevLS:", isRevLSClosed());
-    SmartDashboard.putBoolean("Sensor:", input.get());
-    SmartDashboard.putNumber("RotTicks:", getArmTicks());
-    SmartDashboard.putNumber("RotPos:", getArmPosition());
+    SmartDashboard.putBoolean("Sensor:", isOnTape());
     SmartDashboard.putNumber("ArmExtPos:", getArmExtPos());
     SmartDashboard.putNumber("ArmPower:", armPower);
 
@@ -136,7 +138,7 @@ public class Arm extends SubsystemBase {
 
     armCount();
 
-    //extendPow(RobotContainer.getJoy1().getY() * 0.5);
-    rotatePow(RobotContainer.getJoy1().getY() * 0.3);
+    extendPow(RobotContainer.getJoy1().getY() * 0.5);
+    //rotatePow(RobotContainer.getJoy1().getY() * 0.3);
   }
 }

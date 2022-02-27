@@ -29,7 +29,7 @@ public class ArmExtend extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    RobotContainer.getArm().armCount();
+    //RobotContainer.getArm().armCount();
     currPos = RobotContainer.getArm().getArmExtPos();
 
     if(lineNum > currPos){
