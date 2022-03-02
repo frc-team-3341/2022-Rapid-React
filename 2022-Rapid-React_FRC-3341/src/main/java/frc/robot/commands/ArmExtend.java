@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
@@ -30,12 +31,13 @@ public class ArmExtend extends CommandBase {
   @Override
   public void execute() {
     //RobotContainer.getArm().armCount();
+    
     currPos = RobotContainer.getArm().getArmExtPos();
 
     if(lineNum > currPos){
-      RobotContainer.getArm().extendPow(0.3);
+      RobotContainer.getArm().extendPow(-0.1);
     }else if(lineNum < currPos){
-      RobotContainer.getArm().extendPow(-0.3);
+      RobotContainer.getArm().extendPow(0.1);
     }
     
   }
@@ -49,6 +51,7 @@ public class ArmExtend extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
+    SmartDashboard.putString("isFinished:", "true");
     return (lineNum == RobotContainer.getArm().getArmExtPos());
   }
 }

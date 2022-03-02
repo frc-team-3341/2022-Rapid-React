@@ -53,7 +53,7 @@ public class Arm extends SubsystemBase {
   }
 
   public boolean isOnTape(){
-    return input.getValue() > 150;
+    return input.getValue() > 1000;
   }
 
   public void extendPow(double power){
@@ -126,10 +126,11 @@ public class Arm extends SubsystemBase {
   public void periodic() {
     // This method will be called once per scheduler run
 
-    SmartDashboard.putNumber("FwdLS:", isFwdLSClosed());
-    SmartDashboard.putNumber("RevLS:", isRevLSClosed());
+    //SmartDashboard.putNumber("FwdLS:", isFwdLSClosed());
+    //SmartDashboard.putNumber("RevLS:", isRevLSClosed());
     SmartDashboard.putBoolean("Sensor:", isOnTape());
     SmartDashboard.putNumber("ArmExtPos:", getArmExtPos());
+    SmartDashboard.putNumber("ArmAnalogInput", input.getValue());
     SmartDashboard.putNumber("ArmPower:", armPower);
 
     if (isRevLSClosed() == 0){
@@ -140,5 +141,10 @@ public class Arm extends SubsystemBase {
 
     extendPow(RobotContainer.getJoy1().getY() * 0.5);
     //rotatePow(RobotContainer.getJoy1().getY() * 0.3);
+
+    /*
+      afternoon sun: black tape:~1700-2000 bar: 120
+      flashlight:
+    */
   }
 }

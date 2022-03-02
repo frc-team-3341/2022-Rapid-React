@@ -16,6 +16,7 @@ import frc.robot.subsystems.MaxbotixUltrasonicSensor;
 import frc.robot.subsystems.DriveTrain;
 
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.ArmExtend;
 import frc.robot.commands.TankDrive;
 import frc.robot.commands.AutoPath;
 import frc.robot.commands.RotatePID;
@@ -36,6 +37,7 @@ public class RobotContainer {
   private static MaxbotixUltrasonicSensor ultrasonicSensor;
   private static Limelight limelight;
   private static Arm arm;
+  private static ArmExtend extend;
 
   public static Joystick joy1;
   public static JoystickButton redPipeline;
@@ -69,6 +71,7 @@ public class RobotContainer {
     arm = new Arm();
     test = new testAccumulate();
     rotatePID = new RotatePID(20);
+    extend = new ArmExtend(5);
 
     joy1 = new Joystick(0);
     rotate20 = new JoystickButton(joy1, 1);
@@ -97,7 +100,6 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    rotate20.whenPressed(new RotatePID(20));
   }
 
   /**
@@ -107,7 +109,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return rotatePID;
+    return extend;
   }
 
   /*public static DriveTrain getDriveTrain(){
