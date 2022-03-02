@@ -41,6 +41,8 @@ public class RotatePID extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    SmartDashboard.putNumber("Rotate Accum Error2:", errorAccum);
+    
     double currTime = Timer.getFPGATimestamp();
     double posError = pid.getPositionError();
 
@@ -56,9 +58,9 @@ public class RotatePID extends CommandBase {
 
 
 
-    SmartDashboard.putNumber("RotatePIDPow:", pidPower);
+    //SmartDashboard.putNumber("RotatePIDPow:", pidPower);
     //SmartDashboard.putNumber("Rotate kiPower:", ki * errorAccum);
-    SmartDashboard.putNumber("Rotate Accum Error:", errorAccum);
+    SmartDashboard.putNumber("Rotate Accum Error1:", errorAccum);
     //SmartDashboard.putNumber("Rotate Error:", pid.getPositionError());
     //SmartDashboard.putNumber("Rotate kpPower:", kp * pid.getPositionError());
     
