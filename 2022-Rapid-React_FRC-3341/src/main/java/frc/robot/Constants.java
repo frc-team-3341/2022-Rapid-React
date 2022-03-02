@@ -31,8 +31,8 @@ public final class Constants
         public static final int MaxbotixUltrasonicSensor = 112;
     } 
     public static final class USBOrder {
-        public static final int Two = 2;
-        public static final int Three = 3;
+        public static final int Zero = 0;
+        public static final int One = 1;
 
     }
 }

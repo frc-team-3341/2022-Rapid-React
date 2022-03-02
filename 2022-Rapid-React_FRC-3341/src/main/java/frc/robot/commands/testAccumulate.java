@@ -4,36 +4,28 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.DriveTrain;
-import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.Constants;
-  
+import edu.wpi.first.wpilibj2.command.CommandBase;
 
-/** An example command that uses an example subsystem. */
-public class ArcadeDrive extends CommandBase {
-  /** Creates a new TankDrive. */
-  private final DriveTrain _driveTrain;
-  private final Joystick _Joystick;
+public class testAccumulate extends CommandBase {
+  /** Creates a new testAccumulate. */
+  private int test;
 
-  public ArcadeDrive(DriveTrain dt, Joystick jt) {
+  public testAccumulate() {
     // Use addRequirements() here to declare subsystem dependencies.
-    _driveTrain = dt;
-    _Joystick = jt;
-
-    addRequirements(_driveTrain);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    test = 0;
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    _driveTrain.arcadeDrive(0.8 * _Joystick.getRawAxis(Constants.JoystickAxis.XAxis),
-      0.8 * _Joystick.getRawAxis(Constants.JoystickAxis.YAxis));
+    test++;
+    SmartDashboard.putNumber("TEST:", test);
   }
 
   // Called once the command ends or is interrupted.
@@ -43,6 +35,6 @@ public class ArcadeDrive extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return test == 7;
   }
 }

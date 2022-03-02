@@ -72,7 +72,6 @@ public class AutoDriveForward extends CommandBase
     }
 
     System.out.println(speed);
-    System.out.println("EXECUTING");
   }
 
   // Called once the command ends or is interrupted.
