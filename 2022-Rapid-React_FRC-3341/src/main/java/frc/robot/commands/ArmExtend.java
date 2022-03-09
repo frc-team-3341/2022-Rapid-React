@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
@@ -12,10 +13,13 @@ public class ArmExtend extends CommandBase {
   /** Creates a new ArmExtend. */
   private int lineNum;
   private int currPos;
+  private double previousTime;
+  private Timer time;
 
   public ArmExtend(int lineNum) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.lineNum = lineNum;
+    time = new Timer();
     if(lineNum < RobotContainer.getArm().getArmMinPos()) lineNum = RobotContainer.getArm().getArmMinPos();
     if(lineNum > RobotContainer.getArm().getArmMaxPos()) lineNum = RobotContainer.getArm().getArmMaxPos();
     addRequirements(RobotContainer.getArm());
@@ -24,6 +28,8 @@ public class ArmExtend extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    time.reset();
+    previousTime = time.getFPGATimestamp();
     currPos = RobotContainer.getArm().getArmExtPos();
   }
 
@@ -31,13 +37,16 @@ public class ArmExtend extends CommandBase {
   @Override
   public void execute() {
     //RobotContainer.getArm().armCount();
-    
+    double currentTime = time.getFPGATimestamp();
+    SmartDashboard.putNumber("Delta T Command", currentTime - previousTime);
+    previousTime = currentTime;
+
     currPos = RobotContainer.getArm().getArmExtPos();
 
     if(lineNum > currPos){
-      RobotContainer.getArm().extendPow(-0.1);
-    }else if(lineNum < currPos){
-      RobotContainer.getArm().extendPow(0.1);
+      RobotContainer.getArm().extendPow(0.3);
+    } else if(lineNum < currPos){
+      RobotContainer.getArm().extendPow(-0.3);
     }
     
   }
@@ -45,13 +54,13 @@ public class ArmExtend extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    
     RobotContainer.getArm().extendPow(0); 
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    SmartDashboard.putString("isFinished:", "true");
     return (lineNum == RobotContainer.getArm().getArmExtPos());
   }
 }

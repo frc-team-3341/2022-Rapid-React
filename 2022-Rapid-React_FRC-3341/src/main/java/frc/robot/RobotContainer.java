@@ -22,8 +22,6 @@ import frc.robot.commands.AutoPath;
 import frc.robot.commands.RotatePID;
 import frc.robot.commands.AutoDriveForward;
 import frc.robot.commands.TurnGyroPID;
-import frc.robot.commands.testAccumulate;
-import frc.robot.commands.testTicksToCm;
 
 
 /**
@@ -46,10 +44,13 @@ public class RobotContainer {
 
 
   private static RotatePID rotatePID;
-  private static testAccumulate test;
-  private final Joystick _leftJoystick;
-  private final Joystick _rightJoystick;
+  private static Joystick _leftJoystick;
+  private static Joystick _rightJoystick;
 
+  private double armpower;
+  private int armExtPos;
+  private boolean armExtPrevState;
+  //private static DriveTrain _DriveTrain;
   /*private static DriveTrain _DriveTrain;
   
   
@@ -65,22 +66,25 @@ public class RobotContainer {
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
+
+    armExtPos = 0;
+    armExtPrevState = Robot.isOnTape();
     // Configure the button bindings
     ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
-    limelight = new Limelight();
+    //limelight = new Limelight();
     arm = new Arm();
-    test = new testAccumulate();
-    rotatePID = new RotatePID(20);
+    //test = new testAccumulate();
+    //rotatePID = new RotatePID(20);
     extend = new ArmExtend(5);
 
     joy1 = new Joystick(0);
-    rotate20 = new JoystickButton(joy1, 1);
-    redPipeline = new JoystickButton(joy1, 3);
-    bluePipeline = new JoystickButton(joy1, 4);
+    //rotate20 = new JoystickButton(joy1, 1);
+    //redPipeline = new JoystickButton(joy1, 3);
+    //bluePipeline = new JoystickButton(joy1, 4);
 
     _leftJoystick = new Joystick(Constants.USBOrder.Zero);
     _rightJoystick = new Joystick(Constants.USBOrder.One);
-   // _DriveTrain = new DriveTrain();
+    //_DriveTrain = new DriveTrain();
     
     //_tankDrive = new TankDrive(_DriveTrain, _leftJoystick, _rightJoystick);
     //_arcadeDrive = new ArcadeDrive(_DriveTrain, _leftJoystick);
@@ -124,7 +128,35 @@ public class RobotContainer {
     return arm;
   }
 
-  public static Joystick getJoy1(){
+  public static Joystick getLeftJoy(){
+    return _leftJoystick;
+  }
+
+  public static Joystick getRightJoy(){
+    return _rightJoystick;
+  }
+
+  public static Joystick getJoy(){
     return joy1;
+  }
+
+  public int getArmExtPos(){
+    return armExtPos;
+  } 
+
+  public void addArmExtPos(){
+    armExtPos++;
+  }
+
+  public void negArmExtPos(){
+    armExtPos--;
+  }
+
+  public boolean getArmExtPrevState(){
+    return armExtPrevState;
+  }
+
+  public void setArmExtPrevState(boolean pos){
+    armExtPrevState = pos;
   }
 }
