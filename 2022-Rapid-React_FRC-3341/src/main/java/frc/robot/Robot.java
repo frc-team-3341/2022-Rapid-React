@@ -37,6 +37,7 @@ public class Robot extends TimedRobot {
   private double armpower;
   private int armExtPos;
   private boolean armExtPrevState;
+  private StringBuilder sb; 
 
 
   /**
@@ -52,6 +53,7 @@ public class Robot extends TimedRobot {
     time.reset();
     prevTime = time.getFPGATimestamp();
     input = new AnalogInput(0);
+    sb = new StringBuilder();
     currPos = 0;
     armExtPos = 0;
     armExtPrevState = isOnTape();
@@ -75,15 +77,22 @@ public class Robot extends TimedRobot {
     
     addPeriodic(() -> {
       analogValue = input.getValue();
-      SmartDashboard.putNumber("analog input", analogValue);
+      //SmartDashboard.putNumber("analog input", analogValue);
      // m_robotContainer.getArm().armCount();
-      SmartDashboard.putBoolean("Sensor:", isOnTape());
-      SmartDashboard.putNumber("ArmExtPos:", armExtPos);
+      //SmartDashboard.putBoolean("Sensor:", isOnTape());
+      //SmartDashboard.putNumber("ArmExtPos:", armExtPos);
+      System.out.println("time: " + time.getFPGATimestamp() + " isOnTape: " + isOnTape());
+      
+      sb.append("\t time");
+      sb.append(time.getFPGATimestamp());
+      sb.append("\t isOnTape");
+      sb.append(isOnTape());
+      
       armCount();
 
-      double currentTime = time.getFPGATimestamp();
-      SmartDashboard.putNumber("Delta T", currentTime - prevTime);
-      prevTime = currentTime;
+      //double currentTime = time.getFPGATimestamp();
+      //SmartDashboard.putNumber("Delta T", currentTime - prevTime);
+     // prevTime = currentTime;
 
       /*
       if(lineNum > currPos){
