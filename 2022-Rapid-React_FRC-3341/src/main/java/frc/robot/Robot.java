@@ -29,6 +29,7 @@ public class Robot extends TimedRobot {
   private static double analogValue;
   private AnalogInput input;
   private boolean armExtPrevState;
+  private StringBuilder sb; 
 
 
   /**
@@ -43,7 +44,9 @@ public class Robot extends TimedRobot {
     time = new Timer();
     time.reset();
     input = new AnalogInput(0);
+
     RobotContainer.getArm().setArmExtPrevState(isOnTape()); 
+
   }
 
   /**
@@ -67,11 +70,14 @@ public class Robot extends TimedRobot {
       SmartDashboard.putNumber("analog input", analogValue); 
       System.out.println("time: " + time.getFPGATimestamp() + " isOnTape: " + isOnTape());
 
+
+      
       armCount();
 
-      /*double currentTime = time.getFPGATimestamp();
-      SmartDashboard.putNumber("Delta T", currentTime - prevTime);
-      prevTime = currentTime;*/
+      //double currentTime = time.getFPGATimestamp();
+      //SmartDashboard.putNumber("Delta T", currentTime - prevTime);
+     // prevTime = currentTime;
+
 
     }, 0.02, 0.01
     );
