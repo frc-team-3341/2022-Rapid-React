@@ -33,13 +33,10 @@ public class Arm extends SubsystemBase {
   private final int maxArmState = 5;
   private Timer time;
 
-  private double previousTime = 0;
-
   public Arm() {
-    //input = new AnalogInput(0);
-    armExtPos = 0;
+    //input = new Anal
     armPower = 0;
-    armExtPrevState = isOnTape();
+    armExtPos = 0;
 
     if(armExtPrevState) armExtPos++; 
 
@@ -57,10 +54,6 @@ public class Arm extends SubsystemBase {
     rotate.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     time = new Timer();
     time.reset();
-  }
-
-  public boolean isOnTape(){
-    return Robot.analogValue() > 1000;
   }
 
   public void extendPow(double power){
@@ -108,21 +101,24 @@ public class Arm extends SubsystemBase {
     return rotate.isRevLimitSwitchClosed();
   }
 
-  public void armCount(){
-    if(armPower < 0){
-      if(!armExtPrevState && isOnTape()){
-          armExtPos--;
-      }
-    }else if(armPower > 0){
-      if(!armExtPrevState && isOnTape()){
-          armExtPos++;
-    }
-    }
-    armExtPrevState = isOnTape();
-  }
-
   public int getArmExtPos(){
     return armExtPos;
+  }
+
+  public boolean getArmExtPrevState(){
+    return armExtPrevState;
+  }
+
+  public void setArmExtPrevState(boolean prevState){
+    armExtPrevState = prevState;
+  }
+
+  public void addArmExtPos(){
+    armExtPos++;
+  }
+
+  public void negArmExtPos(){
+    armExtPos--;
   }
 
   public int getArmMaxPos(){
@@ -131,6 +127,24 @@ public class Arm extends SubsystemBase {
 
   public int getArmMinPos(){
     return minArmState;
+  }
+
+  public static boolean isOnTape(){
+    return Robot.analogValue() > 1000;
+  }
+
+  public void armCount(){
+    if(armPower < 0){
+      if(!armExtPrevState && isOnTape()){
+          negArmExtPos();
+      }
+    }else if(armPower  > 0){
+      if(!armExtPrevState && isOnTape()){
+          addArmExtPos();
+      }
+    }
+
+    armExtPrevState = isOnTape();  
   }
 
   @Override
@@ -144,22 +158,14 @@ public class Arm extends SubsystemBase {
 
     if (isRevLSClosed() == 0){
       resetArm();  
-    }
-    
-    
-    //armCount();
-
+    } 
+  
+    armCount();
     extendPow(RobotContainer.getJoy().getY() * 0.5);
-    /*double currentTime = time.getFPGATimestamp();
-    SmartDashboard.putNumber("Time:", currentTime);
-    SmartDashboard.putNumber("Delta T", currentTime - previousTime);
-    previousTime = currentTime;*/
-    //rotatePow(RobotContainer.getJoy1().getY() * 0.3);
 
-    /*
-      afternoon sun: black tape:~1700-2000 bar: 120
-      flashlight:
-    */
+    SmartDashboard.putNumber("ArmExtPos: ", getArmExtPos());
+
+    //rotatePow(RobotContainer.getJoy1().getY() * 0.3);
 
 
   }

@@ -13,13 +13,10 @@ public class ArmExtend extends CommandBase {
   /** Creates a new ArmExtend. */
   private int lineNum;
   private int currPos;
-  private double previousTime;
-  private Timer time;
 
   public ArmExtend(int lineNum) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.lineNum = lineNum;
-    time = new Timer();
     if(lineNum < RobotContainer.getArm().getArmMinPos()) lineNum = RobotContainer.getArm().getArmMinPos();
     if(lineNum > RobotContainer.getArm().getArmMaxPos()) lineNum = RobotContainer.getArm().getArmMaxPos();
     addRequirements(RobotContainer.getArm());
@@ -28,20 +25,16 @@ public class ArmExtend extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    time.reset();
-    previousTime = time.getFPGATimestamp();
     currPos = RobotContainer.getArm().getArmExtPos();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //RobotContainer.getArm().armCount();
-    double currentTime = time.getFPGATimestamp();
-    SmartDashboard.putNumber("Delta T Command", currentTime - previousTime);
-    previousTime = currentTime;
 
     currPos = RobotContainer.getArm().getArmExtPos();
+    SmartDashboard.putNumber("lineNum: ", lineNum);
+    SmartDashboard.putNumber("currPos: ", currPos);
 
     if(lineNum > currPos){
       RobotContainer.getArm().extendPow(0.3);
@@ -61,6 +54,8 @@ public class ArmExtend extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
+    
+    SmartDashboard.putBoolean("isFInished: ", lineNum == RobotContainer.getArm().getArmExtPos());
     return (lineNum == RobotContainer.getArm().getArmExtPos());
   }
 }

@@ -75,7 +75,7 @@ public class RobotContainer {
     arm = new Arm();
     //test = new testAccumulate();
     //rotatePID = new RotatePID(20);
-    extend = new ArmExtend(5);
+    extend = new ArmExtend(4);
 
     joy1 = new Joystick(0);
     //rotate20 = new JoystickButton(joy1, 1);
@@ -143,14 +143,6 @@ public class RobotContainer {
   public int getArmExtPos(){
     return armExtPos;
   } 
-
-  public void addArmExtPos(){
-    armExtPos++;
-  }
-
-  public void negArmExtPos(){
-    armExtPos--;
-  }
 
   public boolean getArmExtPrevState(){
     return armExtPrevState;

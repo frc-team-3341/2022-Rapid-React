@@ -1,0 +1,3407 @@
+[
+    {
+        "messageType": 2,
+        "timestamp": 33.6494140625,
+        "seqNumber": 24085,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.65380859375,
+        "seqNumber": 24086,
+        "line": "time: 34.300474 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.655517578125,
+        "seqNumber": 24087,
+        "line": "time: 34.302518 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.657470703125,
+        "seqNumber": 24088,
+        "line": "time: 34.30413 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.6611328125,
+        "seqNumber": 24089,
+        "line": "time: 34.30811 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.6650390625,
+        "seqNumber": 24090,
+        "line": "time: 34.310866 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.666748046875,
+        "seqNumber": 24091,
+        "line": "time: 34.313026 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.669921875,
+        "seqNumber": 24092,
+        "line": "time: 34.315702 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.876220703125,
+        "seqNumber": 24093,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.881591796875,
+        "seqNumber": 24094,
+        "line": "time: 34.528069 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.884521484375,
+        "seqNumber": 24095,
+        "line": "time: 34.530979 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.886474609375,
+        "seqNumber": 24096,
+        "line": "time: 34.533132 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.891845703125,
+        "seqNumber": 24097,
+        "line": "time: 34.537571 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.895263671875,
+        "seqNumber": 24098,
+        "line": "time: 34.541479 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.8974609375,
+        "seqNumber": 24099,
+        "line": "time: 34.543222 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 33.900634765625,
+        "seqNumber": 24100,
+        "line": "time: 34.545177 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.105712890625,
+        "seqNumber": 24101,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 34.11572265625,
+        "seqNumber": 24102,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000069s\n\trobotPeriodic(): 0.202193s\n\tLiveWindow.updateValues(): 0.003254s\n\tShuffleboard.update(): 0.000034s\n\tdisabledPeriodic(): 0.001317s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.11669921875,
+        "seqNumber": 24103,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000069s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.116943359375,
+        "seqNumber": 24104,
+        "line": "\trobotPeriodic(): 0.202193s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.117919921875,
+        "seqNumber": 24105,
+        "line": "\tLiveWindow.updateValues(): 0.003254s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.11865234375,
+        "seqNumber": 24106,
+        "line": "\tShuffleboard.update(): 0.000034s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.118896484375,
+        "seqNumber": 24107,
+        "line": "\tdisabledPeriodic(): 0.001317s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.119384765625,
+        "seqNumber": 24108,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.135009765625,
+        "seqNumber": 24109,
+        "line": "time: 34.777695 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.138671875,
+        "seqNumber": 24110,
+        "line": "time: 34.783423 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.142822265625,
+        "seqNumber": 24111,
+        "line": "time: 34.787522 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.146484375,
+        "seqNumber": 24112,
+        "line": "time: 34.79122 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.1533203125,
+        "seqNumber": 24113,
+        "line": "time: 34.794972 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.15771484375,
+        "seqNumber": 24114,
+        "line": "time: 34.801972 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.161865234375,
+        "seqNumber": 24115,
+        "line": "time: 34.806392 isOnTape: false"
+    },
+    {
+        "timestamp": 34.164306640625,
+        "seqNumber": 24116,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.164794921875,
+        "seqNumber": 24117,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.1650390625,
+        "seqNumber": 24118,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.36669921875,
+        "seqNumber": 24119,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 34.371337890625,
+        "seqNumber": 24120,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArm.periodic(): 0.000335s\n\tbuttons.run(): 0.000030s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201263s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.373779296875,
+        "seqNumber": 24121,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArm.periodic(): 0.000335s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.3740234375,
+        "seqNumber": 24122,
+        "line": "\tbuttons.run(): 0.000030s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.374267578125,
+        "seqNumber": 24123,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201263s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.374755859375,
+        "seqNumber": 24124,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.387451171875,
+        "seqNumber": 24125,
+        "line": "time: 35.031817 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.390380859375,
+        "seqNumber": 24126,
+        "line": "time: 35.035359 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.396484375,
+        "seqNumber": 24127,
+        "line": "time: 35.040141 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.40087890625,
+        "seqNumber": 24128,
+        "line": "time: 35.045276 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.404296875,
+        "seqNumber": 24129,
+        "line": "time: 35.048993 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.40869140625,
+        "seqNumber": 24130,
+        "line": "time: 35.053074 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.414306640625,
+        "seqNumber": 24131,
+        "line": "time: 35.05724 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.620361328125,
+        "seqNumber": 24132,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.623779296875,
+        "seqNumber": 24133,
+        "line": "time: 35.270526 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.626220703125,
+        "seqNumber": 24134,
+        "line": "time: 35.272896 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.628173828125,
+        "seqNumber": 24135,
+        "line": "time: 35.274889 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.633544921875,
+        "seqNumber": 24136,
+        "line": "time: 35.28026 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.63720703125,
+        "seqNumber": 24137,
+        "line": "time: 35.282977 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.63916015625,
+        "seqNumber": 24138,
+        "line": "time: 35.285355 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.6416015625,
+        "seqNumber": 24139,
+        "line": "time: 35.287281 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.84765625,
+        "seqNumber": 24140,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.85107421875,
+        "seqNumber": 24141,
+        "line": "time: 35.497836 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.8544921875,
+        "seqNumber": 24142,
+        "line": "time: 35.501228 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.8564453125,
+        "seqNumber": 24143,
+        "line": "time: 35.50317 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.860595703125,
+        "seqNumber": 24144,
+        "line": "time: 35.507411 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.86328125,
+        "seqNumber": 24145,
+        "line": "time: 35.509524 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.865478515625,
+        "seqNumber": 24146,
+        "line": "time: 35.511648 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 34.86767578125,
+        "seqNumber": 24147,
+        "line": "time: 35.513553 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.074462890625,
+        "seqNumber": 24148,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.076171875,
+        "seqNumber": 24149,
+        "line": "time: 35.722892 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.0791015625,
+        "seqNumber": 24150,
+        "line": "time: 35.725876 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.0810546875,
+        "seqNumber": 24151,
+        "line": "time: 35.727715 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.085205078125,
+        "seqNumber": 24152,
+        "line": "time: 35.731954 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.088134765625,
+        "seqNumber": 24153,
+        "line": "time: 35.733722 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.090087890625,
+        "seqNumber": 24154,
+        "line": "time: 35.736087 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.09375,
+        "seqNumber": 24155,
+        "line": "time: 35.73801 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.301513671875,
+        "seqNumber": 24156,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 35.31005859375,
+        "seqNumber": 24157,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000070s\n\trobotPeriodic(): 0.204154s\n\tLiveWindow.updateValues(): 0.002577s\n\tShuffleboard.update(): 0.000037s\n\tdisabledPeriodic(): 0.002027s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.310791015625,
+        "seqNumber": 24158,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000070s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.31298828125,
+        "seqNumber": 24159,
+        "line": "\trobotPeriodic(): 0.204154s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.313720703125,
+        "seqNumber": 24160,
+        "line": "\tLiveWindow.updateValues(): 0.002577s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.314208984375,
+        "seqNumber": 24161,
+        "line": "\tShuffleboard.update(): 0.000037s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.314453125,
+        "seqNumber": 24162,
+        "line": "\tdisabledPeriodic(): 0.002027s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.316162109375,
+        "seqNumber": 24163,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.329833984375,
+        "seqNumber": 24164,
+        "line": "time: 35.973839 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.335205078125,
+        "seqNumber": 24165,
+        "line": "time: 35.978086 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.338623046875,
+        "seqNumber": 24166,
+        "line": "time: 35.983516 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.34228515625,
+        "seqNumber": 24167,
+        "line": "time: 35.987039 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.346435546875,
+        "seqNumber": 24168,
+        "line": "time: 35.990342 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.3505859375,
+        "seqNumber": 24169,
+        "line": "time: 35.994699 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.355712890625,
+        "seqNumber": 24170,
+        "line": "time: 36.000534 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.359619140625,
+        "seqNumber": 24171,
+        "line": "time: 36.004151 isOnTape: false"
+    },
+    {
+        "timestamp": 35.36181640625,
+        "seqNumber": 24172,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.3623046875,
+        "seqNumber": 24173,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.362548828125,
+        "seqNumber": 24174,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.566162109375,
+        "seqNumber": 24175,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 35.57373046875,
+        "seqNumber": 24176,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArm.periodic(): 0.000342s\n\tbuttons.run(): 0.000029s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201367s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.574462890625,
+        "seqNumber": 24177,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArm.periodic(): 0.000342s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.574951171875,
+        "seqNumber": 24178,
+        "line": "\tbuttons.run(): 0.000029s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.575439453125,
+        "seqNumber": 24179,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201367s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.575927734375,
+        "seqNumber": 24180,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.587890625,
+        "seqNumber": 24181,
+        "line": "time: 36.23318 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.593994140625,
+        "seqNumber": 24182,
+        "line": "time: 36.236394 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.59814453125,
+        "seqNumber": 24183,
+        "line": "time: 36.242476 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.6015625,
+        "seqNumber": 24184,
+        "line": "time: 36.246751 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.606689453125,
+        "seqNumber": 24185,
+        "line": "time: 36.250108 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.61328125,
+        "seqNumber": 24186,
+        "line": "time: 36.256364 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.617919921875,
+        "seqNumber": 24187,
+        "line": "time: 36.262403 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.628662109375,
+        "seqNumber": 24188,
+        "line": "time: 36.266458 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.8349609375,
+        "seqNumber": 24189,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.83740234375,
+        "seqNumber": 24190,
+        "line": "time: 36.484035 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.8408203125,
+        "seqNumber": 24191,
+        "line": "time: 36.48753 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.842529296875,
+        "seqNumber": 24192,
+        "line": "time: 36.489423 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.846435546875,
+        "seqNumber": 24193,
+        "line": "time: 36.493178 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.84912109375,
+        "seqNumber": 24194,
+        "line": "time: 36.495189 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.85302734375,
+        "seqNumber": 24195,
+        "line": "time: 36.497394 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.855224609375,
+        "seqNumber": 24196,
+        "line": "time: 36.500998 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 35.858154296875,
+        "seqNumber": 24197,
+        "line": "time: 36.503535 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.064697265625,
+        "seqNumber": 24198,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.0673828125,
+        "seqNumber": 24199,
+        "line": "time: 36.7142 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.06982421875,
+        "seqNumber": 24200,
+        "line": "time: 36.716535 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.07568359375,
+        "seqNumber": 24201,
+        "line": "time: 36.718547 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.079833984375,
+        "seqNumber": 24202,
+        "line": "time: 36.726545 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.0830078125,
+        "seqNumber": 24203,
+        "line": "time: 36.728891 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.08544921875,
+        "seqNumber": 24204,
+        "line": "time: 36.731226 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.088134765625,
+        "seqNumber": 24205,
+        "line": "time: 36.733348 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.0908203125,
+        "seqNumber": 24206,
+        "line": "time: 36.735979 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.29736328125,
+        "seqNumber": 24207,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.30078125,
+        "seqNumber": 24208,
+        "line": "time: 36.947625 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.302734375,
+        "seqNumber": 24209,
+        "line": "time: 36.949527 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.304931640625,
+        "seqNumber": 24210,
+        "line": "time: 36.951735 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.308837890625,
+        "seqNumber": 24211,
+        "line": "time: 36.955444 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.31298828125,
+        "seqNumber": 24212,
+        "line": "time: 36.958229 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.3173828125,
+        "seqNumber": 24213,
+        "line": "time: 36.961472 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.31982421875,
+        "seqNumber": 24214,
+        "line": "time: 36.965523 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.323486328125,
+        "seqNumber": 24215,
+        "line": "time: 36.96848 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.529541015625,
+        "seqNumber": 24216,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 36.538330078125,
+        "seqNumber": 24217,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000072s\n\trobotPeriodic(): 0.202651s\n\tLiveWindow.updateValues(): 0.002229s\n\tShuffleboard.update(): 0.000038s\n\tdisabledPeriodic(): 0.001145s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.539306640625,
+        "seqNumber": 24218,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000072s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.539794921875,
+        "seqNumber": 24219,
+        "line": "\trobotPeriodic(): 0.202651s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.542236328125,
+        "seqNumber": 24220,
+        "line": "\tLiveWindow.updateValues(): 0.002229s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.54248046875,
+        "seqNumber": 24221,
+        "line": "\tShuffleboard.update(): 0.000038s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.542724609375,
+        "seqNumber": 24222,
+        "line": "\tdisabledPeriodic(): 0.001145s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.543212890625,
+        "seqNumber": 24223,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.55712890625,
+        "seqNumber": 24224,
+        "line": "time: 37.201459 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.564453125,
+        "seqNumber": 24225,
+        "line": "time: 37.207056 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.568603515625,
+        "seqNumber": 24226,
+        "line": "time: 37.213387 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.5732421875,
+        "seqNumber": 24227,
+        "line": "time: 37.217012 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.578369140625,
+        "seqNumber": 24228,
+        "line": "time: 37.221913 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.58251953125,
+        "seqNumber": 24229,
+        "line": "time: 37.226755 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.5869140625,
+        "seqNumber": 24230,
+        "line": "time: 37.231245 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.5908203125,
+        "seqNumber": 24231,
+        "line": "time: 37.235327 isOnTape: false"
+    },
+    {
+        "timestamp": 36.592529296875,
+        "seqNumber": 24232,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.59326171875,
+        "seqNumber": 24233,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.593505859375,
+        "seqNumber": 24234,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.797119140625,
+        "seqNumber": 24235,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 36.80078125,
+        "seqNumber": 24236,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArm.periodic(): 0.000619s\n\tbuttons.run(): 0.000134s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201099s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.801025390625,
+        "seqNumber": 24237,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArm.periodic(): 0.000619s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.801513671875,
+        "seqNumber": 24238,
+        "line": "\tbuttons.run(): 0.000134s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.802001953125,
+        "seqNumber": 24239,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201099s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.80224609375,
+        "seqNumber": 24240,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.8232421875,
+        "seqNumber": 24241,
+        "line": "time: 37.468224 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.825439453125,
+        "seqNumber": 24242,
+        "line": "time: 37.47136 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.8271484375,
+        "seqNumber": 24243,
+        "line": "time: 37.473307 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.8291015625,
+        "seqNumber": 24244,
+        "line": "time: 37.475171 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.83154296875,
+        "seqNumber": 24245,
+        "line": "time: 37.477732 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.8349609375,
+        "seqNumber": 24246,
+        "line": "time: 37.479939 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.8369140625,
+        "seqNumber": 24247,
+        "line": "time: 37.482922 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 36.8388671875,
+        "seqNumber": 24248,
+        "line": "time: 37.484834 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.07373046875,
+        "seqNumber": 24249,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.07861328125,
+        "seqNumber": 24250,
+        "line": "time: 37.725013 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.0810546875,
+        "seqNumber": 24251,
+        "line": "time: 37.727472 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.083740234375,
+        "seqNumber": 24252,
+        "line": "time: 37.729951 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.086181640625,
+        "seqNumber": 24253,
+        "line": "time: 37.732799 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.088623046875,
+        "seqNumber": 24254,
+        "line": "time: 37.735086 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.09130859375,
+        "seqNumber": 24255,
+        "line": "time: 37.737684 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.095458984375,
+        "seqNumber": 24256,
+        "line": "time: 37.741428 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.098388671875,
+        "seqNumber": 24257,
+        "line": "time: 37.744076 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.304931640625,
+        "seqNumber": 24258,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.307861328125,
+        "seqNumber": 24259,
+        "line": "time: 37.954049 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.3095703125,
+        "seqNumber": 24260,
+        "line": "ADDED!!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.31201171875,
+        "seqNumber": 24261,
+        "line": "time: 37.957529 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.314697265625,
+        "seqNumber": 24262,
+        "line": "time: 37.961418 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.318603515625,
+        "seqNumber": 24263,
+        "line": "time: 37.964955 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.322265625,
+        "seqNumber": 24264,
+        "line": "time: 37.969084 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.32666015625,
+        "seqNumber": 24265,
+        "line": "time: 37.971784 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.332763671875,
+        "seqNumber": 24266,
+        "line": "time: 37.976707 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.337158203125,
+        "seqNumber": 24267,
+        "line": "time: 37.981872 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.5439453125,
+        "seqNumber": 24268,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 37.5537109375,
+        "seqNumber": 24269,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000071s\n\trobotPeriodic(): 0.202972s\n\tLiveWindow.updateValues(): 0.002316s\n\tShuffleboard.update(): 0.000035s\n\tautonomousPeriodic(): 0.002171s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.554443359375,
+        "seqNumber": 24270,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000071s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.555419921875,
+        "seqNumber": 24271,
+        "line": "\trobotPeriodic(): 0.202972s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.556396484375,
+        "seqNumber": 24272,
+        "line": "\tLiveWindow.updateValues(): 0.002316s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.556640625,
+        "seqNumber": 24273,
+        "line": "\tShuffleboard.update(): 0.000035s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.556884765625,
+        "seqNumber": 24274,
+        "line": "\tautonomousPeriodic(): 0.002171s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.55712890625,
+        "seqNumber": 24275,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.57275390625,
+        "seqNumber": 24276,
+        "line": "time: 38.214971 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.577392578125,
+        "seqNumber": 24277,
+        "line": "time: 38.221197 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.581298828125,
+        "seqNumber": 24278,
+        "line": "time: 38.225785 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.585205078125,
+        "seqNumber": 24279,
+        "line": "time: 38.229891 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.5888671875,
+        "seqNumber": 24280,
+        "line": "time: 38.233585 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.593994140625,
+        "seqNumber": 24281,
+        "line": "time: 38.238358 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.599609375,
+        "seqNumber": 24282,
+        "line": "time: 38.244293 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.603759765625,
+        "seqNumber": 24283,
+        "line": "time: 38.248466 isOnTape: false"
+    },
+    {
+        "timestamp": 37.605224609375,
+        "seqNumber": 24284,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.605712890625,
+        "seqNumber": 24285,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.606201171875,
+        "seqNumber": 24286,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.81201171875,
+        "seqNumber": 24287,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 37.818115234375,
+        "seqNumber": 24288,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArmExtend.execute(): 0.000211s\n\tArm.periodic(): 0.000655s\n\tbuttons.run(): 0.000031s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201100s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.819091796875,
+        "seqNumber": 24289,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArmExtend.execute(): 0.000211s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.819580078125,
+        "seqNumber": 24290,
+        "line": "\tArm.periodic(): 0.000655s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.81982421875,
+        "seqNumber": 24291,
+        "line": "\tbuttons.run(): 0.000031s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.820556640625,
+        "seqNumber": 24292,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201100s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.822021484375,
+        "seqNumber": 24293,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.839599609375,
+        "seqNumber": 24294,
+        "line": "time: 38.481746 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.84375,
+        "seqNumber": 24295,
+        "line": "time: 38.488107 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.84716796875,
+        "seqNumber": 24296,
+        "line": "time: 38.491999 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.85205078125,
+        "seqNumber": 24297,
+        "line": "time: 38.495712 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.856201171875,
+        "seqNumber": 24298,
+        "line": "time: 38.500781 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.86083984375,
+        "seqNumber": 24299,
+        "line": "time: 38.504772 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.86474609375,
+        "seqNumber": 24300,
+        "line": "time: 38.509032 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.8681640625,
+        "seqNumber": 24301,
+        "line": "time: 38.512941 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 37.873046875,
+        "seqNumber": 24302,
+        "line": "time: 38.516374 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.07958984375,
+        "seqNumber": 24303,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.08203125,
+        "seqNumber": 24304,
+        "line": "time: 38.728607 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.083740234375,
+        "seqNumber": 24305,
+        "line": "ADDED!!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.085205078125,
+        "seqNumber": 24306,
+        "line": "time: 38.732116 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.087646484375,
+        "seqNumber": 24307,
+        "line": "time: 38.734393 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.093017578125,
+        "seqNumber": 24308,
+        "line": "time: 38.739735 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.096923828125,
+        "seqNumber": 24309,
+        "line": "time: 38.742986 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.099853515625,
+        "seqNumber": 24310,
+        "line": "time: 38.745145 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.103271484375,
+        "seqNumber": 24311,
+        "line": "time: 38.748041 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.10791015625,
+        "seqNumber": 24312,
+        "line": "time: 38.752337 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.1123046875,
+        "seqNumber": 24313,
+        "line": "time: 38.75643 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.3193359375,
+        "seqNumber": 24314,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.322509765625,
+        "seqNumber": 24315,
+        "line": "time: 38.968879 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.32470703125,
+        "seqNumber": 24316,
+        "line": "time: 38.971494 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.32666015625,
+        "seqNumber": 24317,
+        "line": "time: 38.973243 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.332275390625,
+        "seqNumber": 24318,
+        "line": "time: 38.977468 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.33642578125,
+        "seqNumber": 24319,
+        "line": "time: 38.982311 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.338623046875,
+        "seqNumber": 24320,
+        "line": "time: 38.984408 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.34130859375,
+        "seqNumber": 24321,
+        "line": "time: 38.986711 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.3466796875,
+        "seqNumber": 24322,
+        "line": "time: 38.98995 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.353271484375,
+        "seqNumber": 24323,
+        "line": "time: 38.995039 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.558349609375,
+        "seqNumber": 24324,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 38.568115234375,
+        "seqNumber": 24325,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000083s\n\trobotPeriodic(): 0.205295s\n\tLiveWindow.updateValues(): 0.000768s\n\tShuffleboard.update(): 0.000031s\n\tautonomousPeriodic(): 0.001177s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.568603515625,
+        "seqNumber": 24326,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000083s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.569580078125,
+        "seqNumber": 24327,
+        "line": "\trobotPeriodic(): 0.205295s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.5732421875,
+        "seqNumber": 24328,
+        "line": "\tLiveWindow.updateValues(): 0.000768s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.57373046875,
+        "seqNumber": 24329,
+        "line": "\tShuffleboard.update(): 0.000031s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.573974609375,
+        "seqNumber": 24330,
+        "line": "\tautonomousPeriodic(): 0.001177s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.57421875,
+        "seqNumber": 24331,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.5869140625,
+        "seqNumber": 24332,
+        "line": "time: 39.231314 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.59130859375,
+        "seqNumber": 24333,
+        "line": "time: 39.235699 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.5966796875,
+        "seqNumber": 24334,
+        "line": "time: 39.241385 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.601806640625,
+        "seqNumber": 24335,
+        "line": "time: 39.245817 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.60595703125,
+        "seqNumber": 24336,
+        "line": "time: 39.250671 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.60986328125,
+        "seqNumber": 24337,
+        "line": "time: 39.254442 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.615478515625,
+        "seqNumber": 24338,
+        "line": "time: 39.25826 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.619384765625,
+        "seqNumber": 24339,
+        "line": "time: 39.26393 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.62353515625,
+        "seqNumber": 24340,
+        "line": "time: 39.26769 isOnTape: false"
+    },
+    {
+        "timestamp": 38.62548828125,
+        "seqNumber": 24341,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.6259765625,
+        "seqNumber": 24342,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.626220703125,
+        "seqNumber": 24343,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.829345703125,
+        "seqNumber": 24344,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 38.83544921875,
+        "seqNumber": 24345,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArmExtend.execute(): 0.000202s\n\tArm.periodic(): 0.000547s\n\tbuttons.run(): 0.000031s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201343s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.8359375,
+        "seqNumber": 24346,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArmExtend.execute(): 0.000202s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.836669921875,
+        "seqNumber": 24347,
+        "line": "\tArm.periodic(): 0.000547s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.837646484375,
+        "seqNumber": 24348,
+        "line": "\tbuttons.run(): 0.000031s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.83984375,
+        "seqNumber": 24349,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201343s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.840087890625,
+        "seqNumber": 24350,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.85595703125,
+        "seqNumber": 24351,
+        "line": "time: 39.500018 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.858642578125,
+        "seqNumber": 24352,
+        "line": "ADDED!!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.86279296875,
+        "seqNumber": 24353,
+        "line": "time: 39.507484 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.866455078125,
+        "seqNumber": 24354,
+        "line": "time: 39.510928 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.87109375,
+        "seqNumber": 24355,
+        "line": "time: 39.514778 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.87646484375,
+        "seqNumber": 24356,
+        "line": "time: 39.52067 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.88037109375,
+        "seqNumber": 24357,
+        "line": "time: 39.524994 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.884033203125,
+        "seqNumber": 24358,
+        "line": "time: 39.52881 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.8876953125,
+        "seqNumber": 24359,
+        "line": "time: 39.532282 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 38.892822265625,
+        "seqNumber": 24360,
+        "line": "time: 39.536788 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.0986328125,
+        "seqNumber": 24361,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.101806640625,
+        "seqNumber": 24362,
+        "line": "time: 39.748585 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.103759765625,
+        "seqNumber": 24363,
+        "line": "time: 39.750695 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.10595703125,
+        "seqNumber": 24364,
+        "line": "time: 39.752735 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.10986328125,
+        "seqNumber": 24365,
+        "line": "time: 39.756268 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.11474609375,
+        "seqNumber": 24366,
+        "line": "time: 39.760878 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.11767578125,
+        "seqNumber": 24367,
+        "line": "time: 39.763191 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.121337890625,
+        "seqNumber": 24368,
+        "line": "time: 39.765889 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.124755859375,
+        "seqNumber": 24369,
+        "line": "time: 39.769773 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.128662109375,
+        "seqNumber": 24370,
+        "line": "time: 39.773583 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.33447265625,
+        "seqNumber": 24371,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.337646484375,
+        "seqNumber": 24372,
+        "line": "time: 39.984428 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.339111328125,
+        "seqNumber": 24373,
+        "line": "ADDED!!"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.3408203125,
+        "seqNumber": 24374,
+        "line": "time: 39.987631 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.342529296875,
+        "seqNumber": 24375,
+        "line": "time: 39.989309 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.346923828125,
+        "seqNumber": 24376,
+        "line": "time: 39.993746 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.35205078125,
+        "seqNumber": 24377,
+        "line": "time: 39.997103 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.35595703125,
+        "seqNumber": 24378,
+        "line": "time: 40.000792 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.361083984375,
+        "seqNumber": 24379,
+        "line": "time: 40.00443 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.365966796875,
+        "seqNumber": 24380,
+        "line": "time: 40.010067 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.3701171875,
+        "seqNumber": 24381,
+        "line": "time: 40.015029 isOnTape: true"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.57666015625,
+        "seqNumber": 24382,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 39.58447265625,
+        "seqNumber": 24383,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.001857s\n\trobotPeriodic(): 0.203297s\n\tLiveWindow.updateValues(): 0.000792s\n\tShuffleboard.update(): 0.000029s\n\tautonomousPeriodic(): 0.002123s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.58544921875,
+        "seqNumber": 24384,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.001857s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.587158203125,
+        "seqNumber": 24385,
+        "line": "\trobotPeriodic(): 0.203297s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.58740234375,
+        "seqNumber": 24386,
+        "line": "\tLiveWindow.updateValues(): 0.000792s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.587646484375,
+        "seqNumber": 24387,
+        "line": "\tShuffleboard.update(): 0.000029s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.587890625,
+        "seqNumber": 24388,
+        "line": "\tautonomousPeriodic(): 0.002123s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.588134765625,
+        "seqNumber": 24389,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.603515625,
+        "seqNumber": 24390,
+        "line": "time: 40.248018 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.606689453125,
+        "seqNumber": 24391,
+        "line": "time: 40.25176 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.611328125,
+        "seqNumber": 24392,
+        "line": "time: 40.255484 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.617431640625,
+        "seqNumber": 24393,
+        "line": "time: 40.261774 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.62109375,
+        "seqNumber": 24394,
+        "line": "time: 40.265827 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.624755859375,
+        "seqNumber": 24395,
+        "line": "time: 40.269448 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.62841796875,
+        "seqNumber": 24396,
+        "line": "time: 40.273181 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.634521484375,
+        "seqNumber": 24397,
+        "line": "time: 40.277008 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.63818359375,
+        "seqNumber": 24398,
+        "line": "time: 40.282803 isOnTape: false"
+    },
+    {
+        "timestamp": 39.6396484375,
+        "seqNumber": 24399,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.64013671875,
+        "seqNumber": 24400,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.640625,
+        "seqNumber": 24401,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.84375,
+        "seqNumber": 24402,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 39.848876953125,
+        "seqNumber": 24403,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArmExtend.execute(): 0.000206s\n\tArm.periodic(): 0.000511s\n\tbuttons.run(): 0.000035s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201342s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.849609375,
+        "seqNumber": 24404,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArmExtend.execute(): 0.000206s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.849853515625,
+        "seqNumber": 24405,
+        "line": "\tArm.periodic(): 0.000511s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.85009765625,
+        "seqNumber": 24406,
+        "line": "\tbuttons.run(): 0.000035s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.850341796875,
+        "seqNumber": 24407,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201342s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.8515625,
+        "seqNumber": 24408,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.868408203125,
+        "seqNumber": 24409,
+        "line": "time: 40.51111 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.875,
+        "seqNumber": 24410,
+        "line": "time: 40.517052 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.879638671875,
+        "seqNumber": 24411,
+        "line": "time: 40.523755 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.88427734375,
+        "seqNumber": 24412,
+        "line": "time: 40.528918 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.888427734375,
+        "seqNumber": 24413,
+        "line": "time: 40.532673 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.894287109375,
+        "seqNumber": 24414,
+        "line": "time: 40.536876 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.89794921875,
+        "seqNumber": 24415,
+        "line": "time: 40.542375 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.903076171875,
+        "seqNumber": 24416,
+        "line": "time: 40.546998 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 39.906982421875,
+        "seqNumber": 24417,
+        "line": "time: 40.551328 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.114501953125,
+        "seqNumber": 24418,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.1171875,
+        "seqNumber": 24419,
+        "line": "time: 40.764093 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.11962890625,
+        "seqNumber": 24420,
+        "line": "time: 40.766201 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.121826171875,
+        "seqNumber": 24421,
+        "line": "time: 40.768701 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.125732421875,
+        "seqNumber": 24422,
+        "line": "time: 40.772602 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.13037109375,
+        "seqNumber": 24423,
+        "line": "time: 40.776086 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.13427734375,
+        "seqNumber": 24424,
+        "line": "time: 40.779998 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.13818359375,
+        "seqNumber": 24425,
+        "line": "time: 40.783078 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.14208984375,
+        "seqNumber": 24426,
+        "line": "time: 40.786628 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.14599609375,
+        "seqNumber": 24427,
+        "line": "time: 40.790525 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.3515625,
+        "seqNumber": 24428,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.35693359375,
+        "seqNumber": 24429,
+        "line": "time: 41.00359 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.359375,
+        "seqNumber": 24430,
+        "line": "time: 41.005789 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.361328125,
+        "seqNumber": 24431,
+        "line": "time: 41.007973 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.365478515625,
+        "seqNumber": 24432,
+        "line": "time: 41.012377 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.368896484375,
+        "seqNumber": 24433,
+        "line": "time: 41.015114 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.3740234375,
+        "seqNumber": 24434,
+        "line": "time: 41.017338 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.3779296875,
+        "seqNumber": 24435,
+        "line": "time: 41.022098 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.381591796875,
+        "seqNumber": 24436,
+        "line": "time: 41.025988 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.38525390625,
+        "seqNumber": 24437,
+        "line": "time: 41.030056 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.388916015625,
+        "seqNumber": 24438,
+        "line": "time: 41.033757 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.59765625,
+        "seqNumber": 24439,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 40.6103515625,
+        "seqNumber": 24440,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000082s\n\trobotPeriodic(): 0.208457s\n\tLiveWindow.updateValues(): 0.001528s\n\tShuffleboard.update(): 0.000034s\n\tautonomousPeriodic(): 0.001138s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.611328125,
+        "seqNumber": 24441,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000082s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.61328125,
+        "seqNumber": 24442,
+        "line": "\trobotPeriodic(): 0.208457s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.615478515625,
+        "seqNumber": 24443,
+        "line": "\tLiveWindow.updateValues(): 0.001528s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.615966796875,
+        "seqNumber": 24444,
+        "line": "\tShuffleboard.update(): 0.000034s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.6162109375,
+        "seqNumber": 24445,
+        "line": "\tautonomousPeriodic(): 0.001138s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.6162109375,
+        "seqNumber": 24446,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.6318359375,
+        "seqNumber": 24447,
+        "line": "time: 41.275153 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.63671875,
+        "seqNumber": 24448,
+        "line": "time: 41.281286 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.64111328125,
+        "seqNumber": 24449,
+        "line": "time: 41.285394 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.6455078125,
+        "seqNumber": 24450,
+        "line": "time: 41.29038 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.64990234375,
+        "seqNumber": 24451,
+        "line": "time: 41.294699 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.655517578125,
+        "seqNumber": 24452,
+        "line": "time: 41.29992 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.659423828125,
+        "seqNumber": 24453,
+        "line": "time: 41.303723 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.663818359375,
+        "seqNumber": 24454,
+        "line": "time: 41.307583 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.66796875,
+        "seqNumber": 24455,
+        "line": "time: 41.312306 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.671630859375,
+        "seqNumber": 24456,
+        "line": "time: 41.316439 isOnTape: false"
+    },
+    {
+        "timestamp": 40.693115234375,
+        "seqNumber": 24457,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.693603515625,
+        "seqNumber": 24458,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.69384765625,
+        "seqNumber": 24459,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.876953125,
+        "seqNumber": 24460,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 40.88232421875,
+        "seqNumber": 24461,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArm.periodic(): 0.000402s\n\tbuttons.run(): 0.000030s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201097s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.88330078125,
+        "seqNumber": 24462,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArm.periodic(): 0.000402s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.884765625,
+        "seqNumber": 24463,
+        "line": "\tbuttons.run(): 0.000030s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.885009765625,
+        "seqNumber": 24464,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201097s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.88525390625,
+        "seqNumber": 24465,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.896728515625,
+        "seqNumber": 24466,
+        "line": "time: 41.543369 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.90087890625,
+        "seqNumber": 24467,
+        "line": "time: 41.545492 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.904296875,
+        "seqNumber": 24468,
+        "line": "time: 41.549104 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.908203125,
+        "seqNumber": 24469,
+        "line": "time: 41.55295 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.91455078125,
+        "seqNumber": 24470,
+        "line": "time: 41.557919 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.918701171875,
+        "seqNumber": 24471,
+        "line": "time: 41.563393 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.923095703125,
+        "seqNumber": 24472,
+        "line": "time: 41.568044 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.92724609375,
+        "seqNumber": 24473,
+        "line": "time: 41.571766 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.93359375,
+        "seqNumber": 24474,
+        "line": "time: 41.575833 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 40.937744140625,
+        "seqNumber": 24475,
+        "line": "time: 41.582011 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.14306640625,
+        "seqNumber": 24476,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.146484375,
+        "seqNumber": 24477,
+        "line": "time: 41.793125 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.148681640625,
+        "seqNumber": 24478,
+        "line": "time: 41.795375 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.1513671875,
+        "seqNumber": 24479,
+        "line": "time: 41.797912 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.156982421875,
+        "seqNumber": 24480,
+        "line": "time: 41.803177 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.16015625,
+        "seqNumber": 24481,
+        "line": "time: 41.805913 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.162353515625,
+        "seqNumber": 24482,
+        "line": "time: 41.808666 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.164794921875,
+        "seqNumber": 24483,
+        "line": "time: 41.810444 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.167724609375,
+        "seqNumber": 24484,
+        "line": "time: 41.812769 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.171630859375,
+        "seqNumber": 24485,
+        "line": "time: 41.815962 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.17578125,
+        "seqNumber": 24486,
+        "line": "time: 41.820551 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.381103515625,
+        "seqNumber": 24487,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.384033203125,
+        "seqNumber": 24488,
+        "line": "time: 42.030124 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.387939453125,
+        "seqNumber": 24489,
+        "line": "time: 42.034545 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.389892578125,
+        "seqNumber": 24490,
+        "line": "time: 42.036476 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.39501953125,
+        "seqNumber": 24491,
+        "line": "time: 42.041785 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.39794921875,
+        "seqNumber": 24492,
+        "line": "time: 42.043998 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.400146484375,
+        "seqNumber": 24493,
+        "line": "time: 42.045812 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.402587890625,
+        "seqNumber": 24494,
+        "line": "time: 42.048542 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.407470703125,
+        "seqNumber": 24495,
+        "line": "time: 42.051958 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.412353515625,
+        "seqNumber": 24496,
+        "line": "time: 42.055804 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.416748046875,
+        "seqNumber": 24497,
+        "line": "time: 42.060813 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.621826171875,
+        "seqNumber": 24498,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 41.628173828125,
+        "seqNumber": 24499,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000070s\n\trobotPeriodic(): 0.202100s\n\tLiveWindow.updateValues(): 0.000579s\n\tShuffleboard.update(): 0.000028s\n\tdisabledPeriodic(): 0.001026s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.63037109375,
+        "seqNumber": 24500,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000070s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.630615234375,
+        "seqNumber": 24501,
+        "line": "\trobotPeriodic(): 0.202100s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.6318359375,
+        "seqNumber": 24502,
+        "line": "\tLiveWindow.updateValues(): 0.000579s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.633056640625,
+        "seqNumber": 24503,
+        "line": "\tShuffleboard.update(): 0.000028s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.63330078125,
+        "seqNumber": 24504,
+        "line": "\tdisabledPeriodic(): 0.001026s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.633544921875,
+        "seqNumber": 24505,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.645263671875,
+        "seqNumber": 24506,
+        "line": "time: 42.290265 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.649169921875,
+        "seqNumber": 24507,
+        "line": "time: 42.29368 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.654296875,
+        "seqNumber": 24508,
+        "line": "time: 42.29748 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.658203125,
+        "seqNumber": 24509,
+        "line": "time: 42.302661 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.661865234375,
+        "seqNumber": 24510,
+        "line": "time: 42.306689 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.665771484375,
+        "seqNumber": 24511,
+        "line": "time: 42.31087 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.670166015625,
+        "seqNumber": 24512,
+        "line": "time: 42.314171 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.675048828125,
+        "seqNumber": 24513,
+        "line": "time: 42.319152 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.678955078125,
+        "seqNumber": 24514,
+        "line": "time: 42.323182 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.6826171875,
+        "seqNumber": 24515,
+        "line": "time: 42.327564 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.88818359375,
+        "seqNumber": 24516,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 41.895263671875,
+        "seqNumber": 24517,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArm.periodic(): 0.000448s\n\tbuttons.run(): 0.000031s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201355s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.89599609375,
+        "seqNumber": 24518,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArm.periodic(): 0.000448s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.896240234375,
+        "seqNumber": 24519,
+        "line": "\tbuttons.run(): 0.000031s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.896484375,
+        "seqNumber": 24520,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201355s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.89794921875,
+        "seqNumber": 24521,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.909423828125,
+        "seqNumber": 24522,
+        "line": "time: 42.555226 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.9111328125,
+        "seqNumber": 24523,
+        "line": "time: 42.557429 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.91259765625,
+        "seqNumber": 24524,
+        "line": "time: 42.559026 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.914794921875,
+        "seqNumber": 24525,
+        "line": "time: 42.56072 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.91748046875,
+        "seqNumber": 24526,
+        "line": "time: 42.563838 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.92041015625,
+        "seqNumber": 24527,
+        "line": "time: 42.566379 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.921875,
+        "seqNumber": 24528,
+        "line": "time: 42.568317 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.92333984375,
+        "seqNumber": 24529,
+        "line": "time: 42.569676 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.925048828125,
+        "seqNumber": 24530,
+        "line": "time: 42.571213 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.9267578125,
+        "seqNumber": 24531,
+        "line": "time: 42.57285 isOnTape: false"
+    },
+    {
+        "timestamp": 41.9482421875,
+        "seqNumber": 24532,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.948974609375,
+        "seqNumber": 24533,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 41.949462890625,
+        "seqNumber": 24534,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.131103515625,
+        "seqNumber": 24535,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.135498046875,
+        "seqNumber": 24536,
+        "line": "time: 42.782205 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.137939453125,
+        "seqNumber": 24537,
+        "line": "time: 42.784715 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.140380859375,
+        "seqNumber": 24538,
+        "line": "time: 42.787 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.142333984375,
+        "seqNumber": 24539,
+        "line": "time: 42.789097 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.146240234375,
+        "seqNumber": 24540,
+        "line": "time: 42.792895 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.150146484375,
+        "seqNumber": 24541,
+        "line": "time: 42.796905 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.15576171875,
+        "seqNumber": 24542,
+        "line": "time: 42.798909 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.15966796875,
+        "seqNumber": 24543,
+        "line": "time: 42.804121 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.164306640625,
+        "seqNumber": 24544,
+        "line": "time: 42.808151 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.16845703125,
+        "seqNumber": 24545,
+        "line": "time: 42.813327 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.374755859375,
+        "seqNumber": 24546,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.3779296875,
+        "seqNumber": 24547,
+        "line": "time: 43.024458 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.38037109375,
+        "seqNumber": 24548,
+        "line": "time: 43.026918 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.382080078125,
+        "seqNumber": 24549,
+        "line": "time: 43.028776 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.385986328125,
+        "seqNumber": 24550,
+        "line": "time: 43.032805 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.3896484375,
+        "seqNumber": 24551,
+        "line": "time: 43.035383 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.392333984375,
+        "seqNumber": 24552,
+        "line": "time: 43.037568 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.394775390625,
+        "seqNumber": 24553,
+        "line": "time: 43.040212 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.3984375,
+        "seqNumber": 24554,
+        "line": "time: 43.043598 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.40380859375,
+        "seqNumber": 24555,
+        "line": "time: 43.047293 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.408447265625,
+        "seqNumber": 24556,
+        "line": "time: 43.052515 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.615478515625,
+        "seqNumber": 24557,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.620361328125,
+        "seqNumber": 24558,
+        "line": "time: 43.266766 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.62255859375,
+        "seqNumber": 24559,
+        "line": "time: 43.269255 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.626220703125,
+        "seqNumber": 24560,
+        "line": "time: 43.271881 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.630615234375,
+        "seqNumber": 24561,
+        "line": "time: 43.27732 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.636962890625,
+        "seqNumber": 24562,
+        "line": "time: 43.283217 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.644287109375,
+        "seqNumber": 24563,
+        "line": "time: 43.288766 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.648193359375,
+        "seqNumber": 24564,
+        "line": "time: 43.292822 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.654052734375,
+        "seqNumber": 24565,
+        "line": "time: 43.296423 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.66259765625,
+        "seqNumber": 24566,
+        "line": "time: 43.303508 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.665771484375,
+        "seqNumber": 24567,
+        "line": "time: 43.310881 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.874267578125,
+        "seqNumber": 24568,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 42.881591796875,
+        "seqNumber": 24569,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tSmartDashboard.updateValues(): 0.000073s\n\trobotPeriodic(): 0.205481s\n\tLiveWindow.updateValues(): 0.002211s\n\tShuffleboard.update(): 0.000034s\n\tdisabledPeriodic(): 0.001555s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.882568359375,
+        "seqNumber": 24570,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tSmartDashboard.updateValues(): 0.000073s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.88330078125,
+        "seqNumber": 24571,
+        "line": "\trobotPeriodic(): 0.205481s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.88427734375,
+        "seqNumber": 24572,
+        "line": "\tLiveWindow.updateValues(): 0.002211s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.884521484375,
+        "seqNumber": 24573,
+        "line": "\tShuffleboard.update(): 0.000034s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.884765625,
+        "seqNumber": 24574,
+        "line": "\tdisabledPeriodic(): 0.001555s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.885009765625,
+        "seqNumber": 24575,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.8994140625,
+        "seqNumber": 24576,
+        "line": "time: 43.544801 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.902587890625,
+        "seqNumber": 24577,
+        "line": "time: 43.54815 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.905517578125,
+        "seqNumber": 24578,
+        "line": "time: 43.551093 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.911376953125,
+        "seqNumber": 24579,
+        "line": "time: 43.556691 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.91650390625,
+        "seqNumber": 24580,
+        "line": "time: 43.561321 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.9208984375,
+        "seqNumber": 24581,
+        "line": "time: 43.56477 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.92431640625,
+        "seqNumber": 24582,
+        "line": "time: 43.569765 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.9287109375,
+        "seqNumber": 24583,
+        "line": "time: 43.573365 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.933349609375,
+        "seqNumber": 24584,
+        "line": "time: 43.577387 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 42.9365234375,
+        "seqNumber": 24585,
+        "line": "time: 43.581794 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.142578125,
+        "seqNumber": 24586,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "timestamp": 43.146484375,
+        "seqNumber": 24587,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "\tArm.periodic(): 0.000415s\n\tbuttons.run(): 0.000092s\n\tMaxbotixUltrasonicSensor.periodic(): 0.201833s\n",
+        "location": "edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.14697265625,
+        "seqNumber": 24588,
+        "line": "Warning at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): \tArm.periodic(): 0.000415s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.147216796875,
+        "seqNumber": 24589,
+        "line": "\tbuttons.run(): 0.000092s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.1474609375,
+        "seqNumber": 24590,
+        "line": "\tMaxbotixUltrasonicSensor.periodic(): 0.201833s"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.147705078125,
+        "seqNumber": 24591,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.159423828125,
+        "seqNumber": 24592,
+        "line": "time: 43.80535 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.16162109375,
+        "seqNumber": 24593,
+        "line": "time: 43.807915 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.1640625,
+        "seqNumber": 24594,
+        "line": "time: 43.809595 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.1669921875,
+        "seqNumber": 24595,
+        "line": "time: 43.812676 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.17041015625,
+        "seqNumber": 24596,
+        "line": "time: 43.815601 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.17431640625,
+        "seqNumber": 24597,
+        "line": "time: 43.818869 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.177490234375,
+        "seqNumber": 24598,
+        "line": "time: 43.822539 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.1806640625,
+        "seqNumber": 24599,
+        "line": "time: 43.825877 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.183837890625,
+        "seqNumber": 24600,
+        "line": "time: 43.829269 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.186767578125,
+        "seqNumber": 24601,
+        "line": "time: 43.831946 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.190185546875,
+        "seqNumber": 24602,
+        "line": "time: 43.835619 isOnTape: false"
+    },
+    {
+        "timestamp": 43.212890625,
+        "seqNumber": 24603,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "Loop time of 0.02s overrun\n",
+        "location": "edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.213623046875,
+        "seqNumber": 24604,
+        "line": "Warning at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:359): Loop time of 0.02s overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.2138671875,
+        "seqNumber": 24605,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.396240234375,
+        "seqNumber": 24606,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.3984375,
+        "seqNumber": 24607,
+        "line": "time: 44.045427 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.400634765625,
+        "seqNumber": 24608,
+        "line": "time: 44.047131 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.4033203125,
+        "seqNumber": 24609,
+        "line": "time: 44.050136 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.40625,
+        "seqNumber": 24610,
+        "line": "time: 44.052517 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.407958984375,
+        "seqNumber": 24611,
+        "line": "time: 44.05432 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.4091796875,
+        "seqNumber": 24612,
+        "line": "time: 44.055722 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.410888671875,
+        "seqNumber": 24613,
+        "line": "time: 44.057035 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.412841796875,
+        "seqNumber": 24614,
+        "line": "time: 44.058877 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.416015625,
+        "seqNumber": 24615,
+        "line": "time: 44.062304 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.418701171875,
+        "seqNumber": 24616,
+        "line": "time: 44.064282 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.423583984375,
+        "seqNumber": 24617,
+        "line": "time: 44.067704 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.628173828125,
+        "seqNumber": 24618,
+        "line": "CommandScheduler loop overrun"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.633056640625,
+        "seqNumber": 24619,
+        "line": "time: 44.27982 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.63525390625,
+        "seqNumber": 24620,
+        "line": "time: 44.281752 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.636962890625,
+        "seqNumber": 24621,
+        "line": "time: 44.283788 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.640869140625,
+        "seqNumber": 24622,
+        "line": "time: 44.286784 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.642333984375,
+        "seqNumber": 24623,
+        "line": "time: 44.288711 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.64404296875,
+        "seqNumber": 24624,
+        "line": "time: 44.290138 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.64599609375,
+        "seqNumber": 24625,
+        "line": "time: 44.292089 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.648193359375,
+        "seqNumber": 24626,
+        "line": "time: 44.293715 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.649658203125,
+        "seqNumber": 24627,
+        "line": "time: 44.296032 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.651611328125,
+        "seqNumber": 24628,
+        "line": "time: 44.297428 isOnTape: false"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 43.65380859375,
+        "seqNumber": 24629,
+        "line": "time: 44.299584 isOnTape: false"
+    }
+]
