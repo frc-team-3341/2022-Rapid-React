@@ -13,15 +13,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.MaxbotixUltrasonicSensor;
-import frc.robot.subsystems.DriveTrain;
 
-import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.ArmExtend;
-import frc.robot.commands.TankDrive;
-import frc.robot.commands.AutoPath;
-import frc.robot.commands.RotatePID;
-import frc.robot.commands.AutoDriveForward;
-import frc.robot.commands.TurnGyroPID;
 
 
 /**
@@ -32,7 +25,6 @@ import frc.robot.commands.TurnGyroPID;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private static MaxbotixUltrasonicSensor ultrasonicSensor;
   private static Limelight limelight;
   private static Arm arm;
   private static ArmExtend extend;
@@ -43,34 +35,13 @@ public class RobotContainer {
   public static JoystickButton rotate20;
 
 
-  private static RotatePID rotatePID;
   private static Joystick _leftJoystick;
   private static Joystick _rightJoystick;
-
-  private double armpower;
-  private int armExtPos;
-  private boolean armExtPrevState;
-  //private static DriveTrain _DriveTrain;
-  /*private static DriveTrain _DriveTrain;
-  
-  
-
-  private static AutoDriveForward driveForward;
-  private static testTicksToCm test;
-  
-
-  private final TankDrive _tankDrive;
-  private final ArcadeDrive _arcadeDrive;
-
-  private static AutoPath autoPath;*/
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
 
-    armExtPos = 0;
-    armExtPrevState = Robot.isOnTape();
     // Configure the button bindings
-    ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
     //limelight = new Limelight();
     arm = new Arm();
     //test = new testAccumulate();
@@ -140,15 +111,4 @@ public class RobotContainer {
     return joy1;
   }
 
-  public int getArmExtPos(){
-    return armExtPos;
-  } 
-
-  public boolean getArmExtPrevState(){
-    return armExtPrevState;
-  }
-
-  public void setArmExtPrevState(boolean pos){
-    armExtPrevState = pos;
-  }
 }

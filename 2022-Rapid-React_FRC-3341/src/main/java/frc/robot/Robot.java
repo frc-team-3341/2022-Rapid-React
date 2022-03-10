@@ -25,11 +25,8 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
-  private Timer time;
   private static double analogValue;
   private AnalogInput input;
-  private boolean armExtPrevState;
-  private StringBuilder sb; 
 
 
   /**
@@ -41,8 +38,6 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
-    time = new Timer();
-    time.reset();
     input = new AnalogInput(0);
 
     RobotContainer.getArm().setArmExtPrevState(isOnTape()); 
@@ -63,20 +58,15 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
-    //RobotContainer.getLimelight().update();
+
     
     addPeriodic(() -> {
       analogValue = input.getValue();
       SmartDashboard.putNumber("analog input", analogValue); 
-      System.out.println("time: " + time.getFPGATimestamp() + " isOnTape: " + isOnTape());
 
-
+      RobotContainer.getArm().armCount();
       
-      armCount();
-
-      //double currentTime = time.getFPGATimestamp();
-      //SmartDashboard.putNumber("Delta T", currentTime - prevTime);
-     // prevTime = currentTime;
+      //armCount();
 
 
     }, 0.02, 0.01
@@ -145,17 +135,18 @@ public class Robot extends TimedRobot {
 
   public void armCount(){
     
+    boolean isOnTape = isOnTape();
     if(RobotContainer.getArm().getArmPower() < 0){
-      if(!RobotContainer.getArm().getArmExtPrevState() && isOnTape()){
+      if(!RobotContainer.getArm().getArmExtPrevState() && isOnTape){
           RobotContainer.getArm().negArmExtPos();
       }
     }else if(RobotContainer.getArm().getArmPower()  > 0){
-      if(!RobotContainer.getArm().getArmExtPrevState() && isOnTape()){
+      if(!RobotContainer.getArm().getArmExtPrevState() && isOnTape){
           RobotContainer.getArm().addArmExtPos();
       }
     }
 
-    RobotContainer.getArm().setArmExtPrevState(isOnTape()); 
+    RobotContainer.getArm().setArmExtPrevState(isOnTape); 
   }
   
 }

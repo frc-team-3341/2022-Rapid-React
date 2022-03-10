@@ -6,7 +6,6 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
@@ -31,7 +30,6 @@ public class Arm extends SubsystemBase {
   private boolean armExtPrevState;
   private final int minArmState = 0;
   private final int maxArmState = 5;
-  private Timer time;
 
   public Arm() {
     //input = new Anal
@@ -52,8 +50,6 @@ public class Arm extends SubsystemBase {
     rotate.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 10);
     rotate.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     rotate.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
-    time = new Timer();
-    time.reset();
   }
 
   public void extendPow(double power){
