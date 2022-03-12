@@ -16,10 +16,29 @@ public final class Constants
 {
     public static final class DriveTrainPorts
     {
-        public static final int LeftDriveTalonPort = 2; //need to check and test later
+        public static final int LeftDriveTalonPort = 2; 
         public static final int RightDriveTalonPort = 3;
         public static final int LeftDriveVictorPort = 4;
         public static final int RightDriveVictorPort = 5;
+    }
+
+    public static final class ArmPorts{
+        public static final int FrontLeftArmRot = 6;  //encoder
+        public static final int FrontRightArmRot = 7; //encoder
+        public static final int BackLeftArmRot = 8;  //encoder
+        public static final int BackRightArmRot = 9; //encoder
+
+        public static final int FrontLeftArmExt = 10;
+        public static final int FrontRightArmExt = 11;
+        public static final int BackLeftArmExt = 12;
+        public static final int BackRightArmExt = 13;
+    }
+
+    public static final class BallPorts{
+        public static final int BallPivot = 14; //encoder
+        public static final int BallIntake = 15; //victor
+        public static final int BallLeftFly = 16; //encoder
+        public static final int BallRightFly = 17; //encoder
     }
 
     public static final class JoystickAxis 
@@ -27,6 +46,7 @@ public final class Constants
         public static final int YAxis = 1;
         public static final int XAxis = 0;
     }
+
     public static class I2CAddresses {
         public static final int MaxbotixUltrasonicSensor = 112;
     } 

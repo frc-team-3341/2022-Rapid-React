@@ -34,9 +34,9 @@ public class ArmExtend extends CommandBase {
     currPos = RobotContainer.getArm().getArmExtPos();
 
     if(lineNum > currPos){
-      RobotContainer.getArm().extendPow(0.3);
+      RobotContainer.getArm().extendPow(0.5);
     } else if(lineNum < currPos){
-      RobotContainer.getArm().extendPow(-0.3);
+      RobotContainer.getArm().extendPow(-0.5);
     }
     
   }

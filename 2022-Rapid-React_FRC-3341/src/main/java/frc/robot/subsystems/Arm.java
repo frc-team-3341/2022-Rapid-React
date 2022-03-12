@@ -6,9 +6,9 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Robot;
 import frc.robot.RobotContainer;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -22,7 +22,7 @@ public class Arm extends SubsystemBase {
   /** Creates a new Arm. */
   private final WPI_TalonSRX extend;
   private final WPI_TalonSRX rotate;
- // private final AnalogInput input;
+  private final AnalogInput input;
 
   //arm variables
   private int armExtPos;
@@ -31,10 +31,13 @@ public class Arm extends SubsystemBase {
   private final int minArmState = 0;
   private final int maxArmState = 5;
 
+
   public Arm() {
-    //input = new Anal
-    armPower = 0;
+
+    input = new AnalogInput(0);
     armExtPos = 0;
+    armPower = 0;
+    armExtPrevState = isOnTape();
 
     if(armExtPrevState) armExtPos++; 
 
@@ -52,6 +55,10 @@ public class Arm extends SubsystemBase {
     rotate.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
   }
 
+  public boolean isOnTape(){
+    return input.getValue() > 1000;
+  }
+
   public void extendPow(double power){
     extend.set(ControlMode.PercentOutput, power);
     armPower = power;
@@ -67,10 +74,6 @@ public class Arm extends SubsystemBase {
 
   public double getArmPosition(){
     return getArmTicks() * 360 / 4096.0;
-  }
-
-  public double getArmPower(){
-    return armPower;
   }
 
   public void resetArm(){
@@ -97,24 +100,23 @@ public class Arm extends SubsystemBase {
     return rotate.isRevLimitSwitchClosed();
   }
 
+  public void armCount(){
+    boolean isOnTape = isOnTape();
+
+    if(!armExtPrevState && isOnTape){
+      if(armPower > 0) armExtPos++;
+      else if(armPower < 0) armExtPos--;
+    }
+
+    armExtPrevState = isOnTape;
+  }
+
+  public void armNegate(){
+    armExtPos--;
+  }
+
   public int getArmExtPos(){
     return armExtPos;
-  }
-
-  public boolean getArmExtPrevState(){
-    return armExtPrevState;
-  }
-
-  public void setArmExtPrevState(boolean prevState){
-    armExtPrevState = prevState;
-  }
-
-  public void addArmExtPos(){
-    armExtPos++;
-  }
-
-  public void negArmExtPos(){
-    armExtPos--;
   }
 
   public int getArmMaxPos(){
@@ -125,44 +127,25 @@ public class Arm extends SubsystemBase {
     return minArmState;
   }
 
-  public static boolean isOnTape(){
-    return Robot.analogValue() > 1000;
-  }
-
-  public void armCount(){
-    if(armPower < 0){
-      if(!armExtPrevState && isOnTape()){
-          negArmExtPos();
-      }
-    }else if(armPower  > 0){
-      if(!armExtPrevState && isOnTape()){
-          addArmExtPos();
-      }
-    }
-
-    armExtPrevState = isOnTape();  
-  }
-
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-
-    //SmartDashboard.putNumber("FwdLS:", isFwdLSClosed());
-    //SmartDashboard.putNumber("RevLS:", isRevLSClosed());
-    //SmartDashboard.putNumber("ArmAnalogInput", Robot.analogValue());
-    //SmartDashboard.putNumber("ArmPower:", armPower);
+    SmartDashboard.putNumber("ArmExtPos:", getArmExtPos());
+    /*SmartDashboard.putNumber("FwdLS:", isFwdLSClosed());
+    SmartDashboard.putNumber("RevLS:", isRevLSClosed());
+    SmartDashboard.putBoolean("Sensor:", isOnTape());
+    
+    SmartDashboard.putNumber("ArmAnalogInput", input.getValue());
+    SmartDashboard.putNumber("ArmPower:", armPower);*/
 
     if (isRevLSClosed() == 0){
       resetArm();  
-    } 
-  
+    }
+
     armCount();
-    extendPow(RobotContainer.getJoy().getY() * 0.5);
 
-    SmartDashboard.putNumber("ArmExtPos: ", getArmExtPos());
-
-    //rotatePow(RobotContainer.getJoy1().getY() * 0.3);
-
+    extendPow(RobotContainer.getJoy1().getY() * 0.5);
+    //rotatePow(RobotContainer.getJoy1().getY() * 0.2 );
 
   }
 }
