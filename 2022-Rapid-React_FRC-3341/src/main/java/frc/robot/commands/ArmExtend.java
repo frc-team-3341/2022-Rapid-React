@@ -25,6 +25,7 @@ public class ArmExtend extends CommandBase {
   @Override
   public void initialize() {
     currPos = RobotContainer.getArm().getArmExtPos();
+    RobotContainer.getArm().setArmBrake(false);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -46,6 +47,7 @@ public class ArmExtend extends CommandBase {
   public void end(boolean interrupted) {
     
     RobotContainer.getArm().extendPow(0); 
+    RobotContainer.getArm().setArmBrake(true);
   }
 
   // Returns true when the command should end.

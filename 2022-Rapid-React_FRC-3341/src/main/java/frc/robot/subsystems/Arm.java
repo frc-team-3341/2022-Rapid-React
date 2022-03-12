@@ -39,7 +39,7 @@ public class Arm extends SubsystemBase {
     armPower = 0;
     armExtPrevState = isOnTape();
 
-    if(armExtPrevState) armExtPos++; 
+    //if(armExtPrevState) armExtPos++; 
 
     extend = new WPI_TalonSRX(1);
     rotate = new WPI_TalonSRX(4);
@@ -109,10 +109,6 @@ public class Arm extends SubsystemBase {
     }
 
     armExtPrevState = isOnTape;
-  }
-
-  public void armNegate(){
-    armExtPos--;
   }
 
   public int getArmExtPos(){
