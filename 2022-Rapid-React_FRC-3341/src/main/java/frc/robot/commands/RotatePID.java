@@ -13,6 +13,7 @@ import frc.robot.RobotContainer;
 public class RotatePID extends CommandBase {
   /** Creates a new RotatePID. */
   private double angle;
+  private int motorNum;
   private PIDController pid;
   private double kp = 0.01;
   private double ki = 0.0005;
@@ -21,10 +22,12 @@ public class RotatePID extends CommandBase {
   private Timer time;
   private double prevTime;
 
-  public RotatePID(double angle) {
+
+  public RotatePID(int motorNum, double angle) {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.getArm());
     this.angle = angle;
+    this.motorNum = motorNum;
     time = new Timer();
   }
 
@@ -49,12 +52,12 @@ public class RotatePID extends CommandBase {
     double dt = currTime - prevTime;
     prevTime = currTime;
 
-    pid.calculate(RobotContainer.getArm().getArmPosition());
+    pid.calculate(RobotContainer.getArm().getArmPosition(motorNum));
     errorAccum += (posError) * dt;
 
     double pidPower = (kp * posError) + (ki * errorAccum);
 
-    RobotContainer.getArm().rotatePow(pidPower);
+    RobotContainer.getArm().rotate(1, pidPower);
 
 
 
@@ -69,7 +72,7 @@ public class RotatePID extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.getArm().rotatePow(0);
+   // RobotContainer.getArm().rotatePow(0);
   }
 
   // Returns true when the command should end.

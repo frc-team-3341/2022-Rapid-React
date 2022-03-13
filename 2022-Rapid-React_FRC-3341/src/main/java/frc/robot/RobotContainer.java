@@ -46,10 +46,11 @@ public class RobotContainer {
 
 
   private static RotatePID rotatePID;
-  private final Joystick _leftJoystick;
-  private final Joystick _rightJoystick;
+  //private final Joystick _leftJoystick;
+  //private final Joystick _rightJoystick;
+  //private static DriveTrain _DriveTrain;
 
-  /*private static DriveTrain _DriveTrain;
+  /*
   
   
 
@@ -68,19 +69,19 @@ public class RobotContainer {
     //ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
     limelight = new Limelight();
     arm = new Arm();
-    rotatePID = new RotatePID(20);
-    extend = new ArmExtend(5);
+   // rotatePID = new RotatePID(20);
+    //extend = new ArmExtend(5);
     extendSeq = new ArmExtendSeq();
 
     ultrasonicSensor = new Ultrasonic();
 
     joy1 = new Joystick(0);
-    rotate20 = new JoystickButton(joy1, 1);
-    redPipeline = new JoystickButton(joy1, 3);
-    bluePipeline = new JoystickButton(joy1, 4);
+    //rotate20 = new JoystickButton(joy1, 1);
+    //redPipeline = new JoystickButton(joy1, 3);
+    //bluePipeline = new JoystickButton(joy1, 4);
 
-    _leftJoystick = new Joystick(Constants.USBOrder.Zero);
-    _rightJoystick = new Joystick(Constants.USBOrder.One);
+    //_leftJoystick = new Joystick(Constants.USBOrder.Zero);
+    //_rightJoystick = new Joystick(Constants.USBOrder.One);
    // _DriveTrain = new DriveTrain();
     
     //_tankDrive = new TankDrive(_DriveTrain, _leftJoystick, _rightJoystick);

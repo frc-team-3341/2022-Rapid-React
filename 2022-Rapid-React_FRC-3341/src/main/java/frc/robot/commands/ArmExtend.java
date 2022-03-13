@@ -12,8 +12,9 @@ public class ArmExtend extends CommandBase {
   /** Creates a new ArmExtend. */
   private int lineNum;
   private int currPos;
+  private int motorNum;
 
-  public ArmExtend(int lineNum) {
+  public ArmExtend(int motorNum, int lineNum) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.lineNum = lineNum;
     if(lineNum < RobotContainer.getArm().getArmMinPos()) lineNum = RobotContainer.getArm().getArmMinPos();
@@ -24,20 +25,20 @@ public class ArmExtend extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    currPos = RobotContainer.getArm().getArmExtPos();
-    RobotContainer.getArm().setArmBrake(false);
+    currPos = RobotContainer.getArm().getArmExtPos(motorNum);
+    RobotContainer.getArm().setExtBrake(motorNum, false);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
 
-    currPos = RobotContainer.getArm().getArmExtPos();
+    currPos = RobotContainer.getArm().getArmExtPos(motorNum);
 
     if(lineNum > currPos){
-      RobotContainer.getArm().extendPow(0.5);
+      RobotContainer.getArm().extend(motorNum, 0.5);
     } else if(lineNum < currPos){
-      RobotContainer.getArm().extendPow(-0.5);
+      RobotContainer.getArm().extend(motorNum, -0.5);
     }
     
   }
@@ -46,14 +47,14 @@ public class ArmExtend extends CommandBase {
   @Override
   public void end(boolean interrupted) {
     
-    RobotContainer.getArm().extendPow(0); 
-    RobotContainer.getArm().setArmBrake(true);
+    RobotContainer.getArm().extend(motorNum, 0); 
+    RobotContainer.getArm().setExtBrake(motorNum, true);
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    
-    return (lineNum == RobotContainer.getArm().getArmExtPos());
+    //return false;
+    return (lineNum == RobotContainer.getArm().getArmExtPos(motorNum));
   }
 }
