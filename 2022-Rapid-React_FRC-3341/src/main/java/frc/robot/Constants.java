@@ -34,6 +34,14 @@ public final class Constants
         public static final int BackRightArmExt = 13;
     }
 
+    public static final class ReflecSensorPorts{
+        //THESE NEED TO BE CHECKED!!
+        public static final int FrontLeftSens = 0;
+        public static final int FrontRightSens = 1;
+        public static final int BackLeftSens = 2;
+        public static final int BackRightSens = 3;
+    }
+
     public static final class BallPorts{
         public static final int BallPivot = 14; //encoder
         public static final int BallIntake = 15; //victor

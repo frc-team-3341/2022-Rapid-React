@@ -7,15 +7,16 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
+import frc.robot.subsystems.Arm1;
 
 public class ArmMoveTeleop extends CommandBase {
   /** Creates a new ArmMoveTeleop. */
-  private int motorNum;
+  private Arm1 armSub;
 
-  public ArmMoveTeleop(int motorNum) {
+  public ArmMoveTeleop(Arm1 armSubsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
-    this.motorNum = motorNum;
-    addRequirements(RobotContainer.getArm());
+    armSub = armSubsystem;
+    addRequirements(armSubsystem);
   }
 
   // Called when the command is initially scheduled.
@@ -25,24 +26,36 @@ public class ArmMoveTeleop extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      SmartDashboard.putNumber("armNum Command", motorNum);
+      /*
+        POV + trigger control extension/retraction (POV designates direction and trigger sets power)
+        Y-axis controls rotation
+      */
+      SmartDashboard.putString("armNum Command", armSub.getName());
       double joyY = RobotContainer.getJoy1().getY();
       double joyX = RobotContainer.getJoy1().getX();
-      if (Math.abs(joyY) < 0.1) {
-        joyY = 0;
+      double POV = RobotContainer.getJoy1().getPOV();
+
+      if((POV >= 0 && POV < 70) || (POV >= 250)){
+        if(RobotContainer.getJoy1().getRawButtonPressed(1)){
+          //power level will be changed with testing
+          armSub.extend(0.1);
+        }
       }
-      if (Math.abs(joyX) < 0.1) {
-        joyX = 0;
+      else if(POV >= 110 && POV <= 250){
+        if(RobotContainer.getJoy1().getRawButtonPressed(1)){
+          //power level will be changed with testing
+          armSub.extend(-0.1);
+        }
       }
-      RobotContainer.getArm().extend(motorNum, -joyY);
-      RobotContainer.getArm().rotate(motorNum, joyX);
+
+      armSub.rotate(joyY);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.getArm().extend(motorNum, 0);
-      RobotContainer.getArm().rotate(motorNum, 0);
+    armSub.extend(0);
+    armSub.rotate(0);
   }
 
   // Returns true when the command should end.

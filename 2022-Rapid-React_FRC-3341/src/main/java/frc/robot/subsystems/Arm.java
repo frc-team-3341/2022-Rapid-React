@@ -330,17 +330,12 @@ public class Arm extends SubsystemBase {
     armCount();
 
     
-    SmartDashboard.putNumber("joyY", RobotContainer.getJoy1().getY());
-    SmartDashboard.putNumber("joyX", RobotContainer.getJoy1().getX());
-    SmartDashboard.putBoolean("but5", RobotContainer.getJoy1().getRawButton(5));
-    SmartDashboard.putBoolean("but6", RobotContainer.getJoy1().getRawButton(6));
-    SmartDashboard.putBoolean("but3", RobotContainer.getJoy1().getRawButton(3));
-    SmartDashboard.putBoolean("but4", RobotContainer.getJoy1().getRawButton(4));
+    
 
     //SmartDashboard.putNumber("PivotLSFwd", pivot.isFwdLimitSwitchClosed());
     //SmartDashboard.putNumber("PivotLSRev", pivot.isRevLimitSwitchClosed());
 
-    SmartDashboard.putNumber("FrontLeftRotLSFwd", isRotFwdLSClosed(1));
+    /*SmartDashboard.putNumber("FrontLeftRotLSFwd", isRotFwdLSClosed(1));
     SmartDashboard.putNumber("FrontRightRotLSFwd", isRotFwdLSClosed(2));
     SmartDashboard.putNumber("BackLeftRotLSFwd", isRotFwdLSClosed(3));
     SmartDashboard.putNumber("BackRightRotLSFwd", isRotFwdLSClosed(4));
@@ -353,7 +348,7 @@ public class Arm extends SubsystemBase {
     SmartDashboard.putNumber("FrontLeftExtLS", isExtLSClosed(1));
     SmartDashboard.putNumber("FrontRightExtLS", isExtLSClosed(2));
     SmartDashboard.putNumber("BackLeftExtLS", isExtLSClosed(3));
-    SmartDashboard.putNumber("BackRightExtLS", isExtLSClosed(4));
+    SmartDashboard.putNumber("BackRightExtLS", isExtLSClosed(4));*/
 
     /*
     SmartDashboard.putNumber("FrontLeftCurr", getArmExtCurrent(1));

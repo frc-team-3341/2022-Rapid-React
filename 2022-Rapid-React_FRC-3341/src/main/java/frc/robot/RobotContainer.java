@@ -11,16 +11,14 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.subsystems.Arm;
+import frc.robot.subsystems.Arm1;
 import frc.robot.subsystems.Limelight;
 import frc.robot.Ultrasonic;
 import frc.robot.subsystems.DriveTrain;
 
 import frc.robot.commands.ArmExtend;
 import frc.robot.commands.TankDrive;
-import frc.robot.commands.AutoPath;
 import frc.robot.commands.RotatePID;
-import frc.robot.commands.AutoDriveForward;
-import frc.robot.commands.TurnGyroPID;
 import frc.robot.commands.ArmExtendSeq;
 import frc.robot.commands.ArmMoveTeleop;
 
@@ -35,14 +33,21 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private static Ultrasonic ultrasonicSensor;
   private static Limelight limelight;
+  private static RotatePID rotatePID;
+  private static DriveTrain _DriveTrain;
+  //private final TankDrive _tankDrive;
+
+  private static Arm1 frontLeftSub;
+  private static Arm1 frontRightSub;
+  private static Arm1 backLeftSub;
+  private static Arm1 backRightSub;
+  private static ArmMoveTeleop frontLeftCom;
+  private static ArmMoveTeleop frontRightCom;
+  private static ArmMoveTeleop backLeftCom;
+  private static ArmMoveTeleop backRightCom;
   private static Arm arm;
   private static ArmExtend extend;
   private static ArmExtendSeq extendSeq;
-
-  private static ArmMoveTeleop frontLeft;
-  private static ArmMoveTeleop frontRight;
-  private static ArmMoveTeleop backLeft;
-  private static ArmMoveTeleop backRight;
 
   public static Joystick joy1;
   public static Joystick joy2;
@@ -52,60 +57,38 @@ public class RobotContainer {
   public static JoystickButton but3;
   public static JoystickButton but4;
 
-
-  public static JoystickButton redPipeline;
-  public static JoystickButton bluePipeline;
-  public static JoystickButton rotate20;
-
-
-  private static RotatePID rotatePID;
-  private static DriveTrain _DriveTrain;
-  //private final TankDrive _tankDrive;
-  /*
-  private static AutoDriveForward driveForward;
-  private static AutoPath autoPath;*/
-
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
-    //ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
-    limelight = new Limelight();
-    arm = new Arm();
-
     joy1 = new Joystick(0);
     joy2 = new Joystick(1);
-
-    frontLeft = new ArmMoveTeleop(1);
-    frontRight = new ArmMoveTeleop(2);
-    backLeft = new ArmMoveTeleop(3);
-    backRight = new ArmMoveTeleop(4);
 
     but5 = new JoystickButton(joy1, 5);
     but6 = new JoystickButton(joy1, 6);
     but3 = new JoystickButton(joy1, 3);
     but4 = new JoystickButton(joy1, 4);
 
-   // rotatePID = new RotatePID(20);
+
+    //ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
+    limelight = new Limelight();
+    //ultrasonicSensor = new Ultrasonic();
+    //_DriveTrain = new DriveTrain();
+    //_tankDrive = new TankDrive(_DriveTrain, joy1, joy2);
+    //_DriveTrain.setDefaultCommand(_tankDrive);
+    
+
+    arm = new Arm();
+    frontLeftSub = new Arm1(Constants.ArmPorts.FrontLeftArmExt, Constants.ArmPorts.FrontLeftArmRot, Constants.ReflecSensorPorts.FrontLeftSens, "FrontLeft");
+    frontRightSub = new Arm1(Constants.ArmPorts.FrontRightArmExt, Constants.ArmPorts.FrontRightArmRot, Constants.ReflecSensorPorts.FrontRightSens, "FrontRight");
+    backLeftSub = new Arm1(Constants.ArmPorts.BackLeftArmExt, Constants.ArmPorts.BackLeftArmRot, Constants.ReflecSensorPorts.BackLeftSens, "BackLeft");
+    backRightSub = new Arm1(Constants.ArmPorts.BackRightArmExt, Constants.ArmPorts.BackRightArmRot, Constants.ReflecSensorPorts.BackRightSens, "BackRight");
+    frontLeftCom = new ArmMoveTeleop(frontLeftSub);
+    frontRightCom = new ArmMoveTeleop(frontRightSub);
+    backLeftCom = new ArmMoveTeleop(backLeftSub);
+    backRightCom = new ArmMoveTeleop(backRightSub);
+    //rotatePID = new RotatePID(20);
     //extend = new ArmExtend(5);
     extendSeq = new ArmExtendSeq();
-
-    //ultrasonicSensor = new Ultrasonic();
-
-    //rotate20 = new JoystickButton(joy1, 1);
-    //redPipeline = new JoystickButton(joy1, 3);
-    //bluePipeline = new JoystickButton(joy1, 4);
-
-    //_leftJoystick = new Joystick(Constants.USBOrder.Zero);
-    //_rightJoystick = new Joystick(Constants.USBOrder.One);
-    //_DriveTrain = new DriveTrain();
-    
-    //_tankDrive = new TankDrive(_DriveTrain, joy1, joy2);
-    //_arcadeDrive = new ArcadeDrive(_DriveTrain, _leftJoystick);
-    //_DriveTrain.setDefaultCommand(_arcadeDrive);
-    
-    //driveForward = new AutoDriveForward(_DriveTrain, -100);
-    //autoPath = new AutoPath();
-    //test = new testTicksToCm(_DriveTrain);
 
     configureButtonBindings();
   }
@@ -117,10 +100,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-     but5.whileHeld(frontLeft);
-     but6.whileHeld(frontRight);
-     but3.whileHeld(backLeft);
-     but4.whileHeld(backRight);
+     but5.whenPressed(frontLeftCom);
+     but6.whenPressed(frontRightCom);
+     but3.whenPressed(backLeftCom);
+     but4.whenPressed(backRightCom);
   }
 
   /**
