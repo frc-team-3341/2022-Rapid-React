@@ -21,7 +21,7 @@ import com.ctre.phoenix.motorcontrol.LimitSwitchSource;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import edu.wpi.first.wpilibj.Timer;
 
-//1 = Front Left, 2 = Front Right, 3 = Back Left, 4 = Back Right
+//1 = Front Left, 2 = Front Right, 3 = Back Left, 4 = Back Right test!
 
 public class Arm extends SubsystemBase {
   /** Creates a new Arm. */
