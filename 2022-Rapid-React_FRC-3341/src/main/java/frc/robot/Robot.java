@@ -47,9 +47,9 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().run();
     //RobotContainer.getLimelight().update();
     //ultrasonic data put on smart dashboard (adding 0.63 to get distance from back of shooter to target)
-    if (RobotContainer.getUltrasonic().canRead()) {
-      SmartDashboard.putNumber("Ultrasonic Distance: ", RobotContainer.getUltrasonic().getDistance() + 0.63);
-    }
+    /*if (RobotContainer.getUltrasonic().canRead()) {
+      //SmartDashboard.putNumber("Ultrasonic Distance: ", RobotContainer.getUltrasonic().getDistance() + 0.63);
+    }*/
   }
 
   /** This function is called once each time the robot enters Disabled mode. */

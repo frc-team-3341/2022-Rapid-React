@@ -7,9 +7,11 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.Robot;
 import frc.robot.RobotContainer;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -28,27 +30,24 @@ public class Arm extends SubsystemBase {
 
   private final WPI_TalonSRX frontLeftRot, frontRightRot, backLeftRot, backRightRot, pivot;
   private final WPI_TalonSRX frontLeftExt, frontRightExt, backLeftExt, backRightExt;
-  private final AnalogInput input1, input2, input3, input4;
+  private final DigitalInput input1, input2, input3, input4;
 
   //arm variables
   private int armExtPos1, armExtPos2, armExtPos3, armExtPos4;
   private double armPower1, armPower2, armPower3, armPower4;
   private boolean armExtPrevState1, armExtPrevState2, armExtPrevState3, armExtPrevState4;
+  private boolean but5, but6, but3, but4;
   private final int minArmState = 0;
   private final int maxArmState = 5;
-
-  private int armNum;
 
 
   public Arm() {
     
     //these IDs need to be changed
-    input1 = new AnalogInput(0);
-    input2 = new AnalogInput(1);
-    input3 = new AnalogInput(2);
-    input4 = new AnalogInput(3);
-
-    armNum = 1;
+    input1 = new DigitalInput(0);
+    input2 = new DigitalInput(1);
+    input3 = new DigitalInput(2);
+    input4 = new DigitalInput(3);
 
     armExtPos1 = 0;
     armExtPos2 = 0;
@@ -89,14 +88,14 @@ public class Arm extends SubsystemBase {
     
     pivot.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     pivot.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
-    /*frontLeftRot.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
+    frontLeftRot.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     frontLeftRot.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     frontRightRot.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     frontRightRot.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     backLeftRot.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     backLeftRot.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     backRightRot.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
-    backRightRot.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);*/
+    backRightRot.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
 
     frontLeftExt.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
     frontRightExt.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
@@ -260,13 +259,13 @@ public class Arm extends SubsystemBase {
   //arm counting methods
   public boolean isOnTape(int motorNum){
     if (motorNum == 1) {
-      return input1.getValue() > 1000;
+      return input1.get();
     } else if (motorNum == 2) {
-      return input2.getValue() > 1000;
+      return input2.get();
     } else if (motorNum == 3) {
-      return input3.getValue() > 1000;
+      return input3.get();
     } else {
-      return input4.getValue() > 1000;
+      return input4.get();
     }
   }
 
@@ -300,7 +299,6 @@ public class Arm extends SubsystemBase {
       if(armPower1 > 0) armExtPos1++;
       else if(armPower1 < 0) armExtPos1--;
     }
-
     armExtPrevState1 = isOnTape1;
 
 
@@ -308,7 +306,6 @@ public class Arm extends SubsystemBase {
       if(armPower2 > 0) armExtPos2++;
       else if(armPower2 < 0) armExtPos2--;
     }
-
     armExtPrevState2 = isOnTape2;
 
 
@@ -316,7 +313,6 @@ public class Arm extends SubsystemBase {
       if(armPower3 > 0) armExtPos3++;
       else if(armPower3 < 0) armExtPos3--;
     }
-
     armExtPrevState3 = isOnTape3;
 
 
@@ -324,7 +320,6 @@ public class Arm extends SubsystemBase {
       if(armPower4 > 0) armExtPos4++;
       else if(armPower4 < 0) armExtPos4--;
     }
-
     armExtPrevState4 = isOnTape4;
   }
   
@@ -334,63 +329,16 @@ public class Arm extends SubsystemBase {
 
     armCount();
 
-    double joyY = RobotContainer.getJoy1().getY();
-    double joyX = RobotContainer.getJoy1().getX();
-
-    if(Math.abs(joyY) > Math.abs(joyX)){
-      joyX = 0;
-    }else{
-      joyY = 0;
-    }
     
+    SmartDashboard.putNumber("joyY", RobotContainer.getJoy1().getY());
+    SmartDashboard.putNumber("joyX", RobotContainer.getJoy1().getX());
+    SmartDashboard.putBoolean("but5", RobotContainer.getJoy1().getRawButton(5));
+    SmartDashboard.putBoolean("but6", RobotContainer.getJoy1().getRawButton(6));
+    SmartDashboard.putBoolean("but3", RobotContainer.getJoy1().getRawButton(3));
+    SmartDashboard.putBoolean("but4", RobotContainer.getJoy1().getRawButton(4));
 
-    if(RobotContainer.getJoy1().getRawButton(5)){
-      extend(1, joyY * 0.5);
-      rotate(1, joyX * 0.5);
-
-    } else{
-      extend(1, 0);
-      rotate(1, 0);
-    }
-
-    if(RobotContainer.getJoy1().getRawButton(6)){
-      extend(2, joyY * 0.5);
-      rotate(2, joyX * 0.2);
-    } else{
-      extend(2, 0);
-      rotate(2, 0);
-    }
-    
-    if(RobotContainer.getJoy1().getRawButton(3)){
-      extend(3, joyY * 0.5);
-      rotate(3, joyX * 0.2);
-    } else{
-      extend(3, 0);
-      rotate(3, 0);
-    }
-    
-    if(RobotContainer.getJoy1().getRawButton(4)){
-      extend(4, joyY * 0.5);
-      rotate(4, joyX * 0.2);
-    } else{
-      extend(4, 0);
-      rotate(4, 0);
-    }
-
-    if(RobotContainer.getJoy1().getRawButton(1)){
-      extend(1, joyY * 0.5);
-      extend(2, joyY * 0.5);
-      extend(3, joyY * 0.5);
-      extend(4, joyY * 0.5);
-    }else{
-      extend(1, 0);
-      extend(2, 0);
-      extend(3, 0);
-      extend(4, 0);
-    }
-
-    SmartDashboard.putNumber("PivotLSFwd", pivot.isFwdLimitSwitchClosed());
-    SmartDashboard.putNumber("PivotLSRev", pivot.isRevLimitSwitchClosed());
+    //SmartDashboard.putNumber("PivotLSFwd", pivot.isFwdLimitSwitchClosed());
+    //SmartDashboard.putNumber("PivotLSRev", pivot.isRevLimitSwitchClosed());
 
     SmartDashboard.putNumber("FrontLeftRotLSFwd", isRotFwdLSClosed(1));
     SmartDashboard.putNumber("FrontRightRotLSFwd", isRotFwdLSClosed(2));
@@ -407,12 +355,14 @@ public class Arm extends SubsystemBase {
     SmartDashboard.putNumber("BackLeftExtLS", isExtLSClosed(3));
     SmartDashboard.putNumber("BackRightExtLS", isExtLSClosed(4));
 
+    /*
     SmartDashboard.putNumber("FrontLeftCurr", getArmExtCurrent(1));
     SmartDashboard.putNumber("FrontRightCurr", getArmExtCurrent(2));
     SmartDashboard.putNumber("BackLeftCurr", getArmExtCurrent(3));
     SmartDashboard.putNumber("BackRightCurr", getArmExtCurrent(4));
+    */
 
-    SmartDashboard.putNumber("ArmPower1", armPower1);
+    //SmartDashboard.putNumber("ArmPower1", armPower1);
 
     /*SmartDashboard.putNumber("FrontLeftCount", getArmExtPos(1));
     SmartDashboard.putNumber("FrontRightCount", getArmExtPos(2));

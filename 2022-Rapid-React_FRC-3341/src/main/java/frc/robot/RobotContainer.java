@@ -15,7 +15,6 @@ import frc.robot.subsystems.Limelight;
 import frc.robot.Ultrasonic;
 import frc.robot.subsystems.DriveTrain;
 
-import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.ArmExtend;
 import frc.robot.commands.TankDrive;
 import frc.robot.commands.AutoPath;
@@ -23,6 +22,7 @@ import frc.robot.commands.RotatePID;
 import frc.robot.commands.AutoDriveForward;
 import frc.robot.commands.TurnGyroPID;
 import frc.robot.commands.ArmExtendSeq;
+import frc.robot.commands.ArmMoveTeleop;
 
 
 /**
@@ -39,28 +39,30 @@ public class RobotContainer {
   private static ArmExtend extend;
   private static ArmExtendSeq extendSeq;
 
+  private static ArmMoveTeleop frontLeft;
+  private static ArmMoveTeleop frontRight;
+  private static ArmMoveTeleop backLeft;
+  private static ArmMoveTeleop backRight;
+
   public static Joystick joy1;
+  public static Joystick joy2;
+
+  public static JoystickButton but5;
+  public static JoystickButton but6;
+  public static JoystickButton but3;
+  public static JoystickButton but4;
+
+
   public static JoystickButton redPipeline;
   public static JoystickButton bluePipeline;
   public static JoystickButton rotate20;
 
 
   private static RotatePID rotatePID;
-  //private final Joystick _leftJoystick;
-  //private final Joystick _rightJoystick;
-  //private static DriveTrain _DriveTrain;
-
+  private static DriveTrain _DriveTrain;
+  //private final TankDrive _tankDrive;
   /*
-  
-  
-
   private static AutoDriveForward driveForward;
-  private static testTicksToCm test;
-  
-
-  private final TankDrive _tankDrive;
-  private final ArcadeDrive _arcadeDrive;
-
   private static AutoPath autoPath;*/
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -69,22 +71,35 @@ public class RobotContainer {
     //ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
     limelight = new Limelight();
     arm = new Arm();
+
+    joy1 = new Joystick(0);
+    joy2 = new Joystick(1);
+
+    frontLeft = new ArmMoveTeleop(1);
+    frontRight = new ArmMoveTeleop(2);
+    backLeft = new ArmMoveTeleop(3);
+    backRight = new ArmMoveTeleop(4);
+
+    but5 = new JoystickButton(joy1, 5);
+    but6 = new JoystickButton(joy1, 6);
+    but3 = new JoystickButton(joy1, 3);
+    but4 = new JoystickButton(joy1, 4);
+
    // rotatePID = new RotatePID(20);
     //extend = new ArmExtend(5);
     extendSeq = new ArmExtendSeq();
 
-    ultrasonicSensor = new Ultrasonic();
+    //ultrasonicSensor = new Ultrasonic();
 
-    joy1 = new Joystick(0);
     //rotate20 = new JoystickButton(joy1, 1);
     //redPipeline = new JoystickButton(joy1, 3);
     //bluePipeline = new JoystickButton(joy1, 4);
 
     //_leftJoystick = new Joystick(Constants.USBOrder.Zero);
     //_rightJoystick = new Joystick(Constants.USBOrder.One);
-   // _DriveTrain = new DriveTrain();
+    //_DriveTrain = new DriveTrain();
     
-    //_tankDrive = new TankDrive(_DriveTrain, _leftJoystick, _rightJoystick);
+    //_tankDrive = new TankDrive(_DriveTrain, joy1, joy2);
     //_arcadeDrive = new ArcadeDrive(_DriveTrain, _leftJoystick);
     //_DriveTrain.setDefaultCommand(_arcadeDrive);
     
@@ -102,6 +117,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+     but5.whileHeld(frontLeft);
+     but6.whileHeld(frontRight);
+     but3.whileHeld(backLeft);
+     but4.whileHeld(backRight);
   }
 
   /**
@@ -128,6 +147,10 @@ public class RobotContainer {
 
   public static Joystick getJoy1(){
     return joy1;
+  }
+
+  public static Joystick getJoy2(){
+    return joy2;
   }
 
   public static Ultrasonic getUltrasonic() {

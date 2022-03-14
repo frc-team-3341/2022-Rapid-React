@@ -11,7 +11,6 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
 import edu.wpi.first.wpilibj.SPI;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Victor;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -30,7 +29,6 @@ public class DriveTrain extends SubsystemBase
 
   private AHRS navx = new AHRS(SPI.Port.kMXP);
   private double ticksToCm  = 127.0/10581.0; //will test constant later
-  private DifferentialDrive _diffDrive;
  
   public DriveTrain() 
   {
@@ -46,8 +44,6 @@ public class DriveTrain extends SubsystemBase
     _rightDriveTalon.setInverted(false);
     _leftDriveVictor.setInverted(InvertType.FollowMaster);
     _rightDriveVictor.setInverted(InvertType.FollowMaster);
-
-    _diffDrive = new DifferentialDrive(_leftDriveTalon, _rightDriveTalon);
 
     _leftDriveTalon.configFactoryDefault();
     _leftDriveTalon.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 10);
@@ -68,12 +64,8 @@ public class DriveTrain extends SubsystemBase
     _rightDriveTalon.set(ControlMode.PercentOutput, -rightSpeed);  
     _leftDriveTalon.set(ControlMode.PercentOutput, -leftSpeed);
 
-    SmartDashboard.putNumber("leftPow:", leftSpeed);
-    SmartDashboard.putNumber("rightPow:", rightSpeed);
-  }
-
-  public void arcadeDrive(double speed, double turn) {
-   // _diffDrive.arcadeDrive(speed, turn);
+    /*SmartDashboard.putNumber("leftPow:", leftSpeed);
+    SmartDashboard.putNumber("rightPow:", rightSpeed);*/
   }
 
   public void resetEncoders() {
