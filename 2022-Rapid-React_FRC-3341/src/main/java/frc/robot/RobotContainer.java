@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import com.fasterxml.jackson.databind.ser.std.StdKeySerializers.Default;
+
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
@@ -21,6 +23,8 @@ import frc.robot.commands.TankDrive;
 import frc.robot.commands.RotatePID;
 import frc.robot.commands.ArmExtendSeq;
 import frc.robot.commands.ArmMoveTeleop;
+import frc.robot.commands.FourArmMoveTeleop;
+import frc.robot.commands.DefaultExtend;
 
 
 /**
@@ -34,7 +38,7 @@ public class RobotContainer {
   private static Ultrasonic ultrasonicSensor;
   private static Limelight limelight;
   private static RotatePID rotatePID;
-  private static DriveTrain _DriveTrain;
+  //private static DriveTrain _DriveTrain;
   //private final TankDrive _tankDrive;
 
   private static Arm1 frontLeftSub;
@@ -45,52 +49,64 @@ public class RobotContainer {
   private static ArmMoveTeleop frontRightCom;
   private static ArmMoveTeleop backLeftCom;
   private static ArmMoveTeleop backRightCom;
-  private static Arm arm;
+  private static FourArmMoveTeleop fourArmMoveTeleop;
+  //private static Arm arm;
   private static ArmExtend extend;
   private static ArmExtendSeq extendSeq;
 
   public static Joystick joy1;
   public static Joystick joy2;
+  public static Joystick joy3;
+  public static Joystick joy4;
 
   public static JoystickButton but5;
   public static JoystickButton but6;
   public static JoystickButton but3;
   public static JoystickButton but4;
+  public static JoystickButton but2;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     joy1 = new Joystick(0);
     joy2 = new Joystick(1);
+    joy3 = new Joystick(2);
+    joy4 = new Joystick(3);
 
-    but5 = new JoystickButton(joy1, 5);
-    but6 = new JoystickButton(joy1, 6);
-    but3 = new JoystickButton(joy1, 3);
-    but4 = new JoystickButton(joy1, 4);
-
+    /*but5 = new JoystickButton(joy3, 5);
+    but6 = new JoystickButton(joy3, 6);
+    but3 = new JoystickButton(joy3, 3);
+    but4 = new JoystickButton(joy3, 4);
+    but2 = new JoystickButton(joy3, 2);*/
 
     //ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
     limelight = new Limelight();
     //ultrasonicSensor = new Ultrasonic();
-    //_DriveTrain = new DriveTrain();
-    //_tankDrive = new TankDrive(_DriveTrain, joy1, joy2);
-    //_DriveTrain.setDefaultCommand(_tankDrive);
+    /*_DriveTrain = new DriveTrain();
+    _tankDrive = new TankDrive(_DriveTrain, joy1, joy2);
+    _DriveTrain.setDefaultCommand(_tankDrive);*/
     
 
-    arm = new Arm();
-    frontLeftSub = new Arm1(Constants.ArmPorts.FrontLeftArmExt, Constants.ArmPorts.FrontLeftArmRot, Constants.ReflecSensorPorts.FrontLeftSens, "FrontLeft");
-    frontRightSub = new Arm1(Constants.ArmPorts.FrontRightArmExt, Constants.ArmPorts.FrontRightArmRot, Constants.ReflecSensorPorts.FrontRightSens, "FrontRight");
-    backLeftSub = new Arm1(Constants.ArmPorts.BackLeftArmExt, Constants.ArmPorts.BackLeftArmRot, Constants.ReflecSensorPorts.BackLeftSens, "BackLeft");
-    backRightSub = new Arm1(Constants.ArmPorts.BackRightArmExt, Constants.ArmPorts.BackRightArmRot, Constants.ReflecSensorPorts.BackRightSens, "BackRight");
-    frontLeftCom = new ArmMoveTeleop(frontLeftSub);
-    frontRightCom = new ArmMoveTeleop(frontRightSub);
-    backLeftCom = new ArmMoveTeleop(backLeftSub);
-    backRightCom = new ArmMoveTeleop(backRightSub);
+    //arm = new Arm();
+    frontLeftSub = new Arm1(Constants.ArmPorts.FrontLeftArmExt, Constants.ArmPorts.FrontLeftArmRot, 0, "FrontLeft");
+    frontRightSub = new Arm1(Constants.ArmPorts.FrontRightArmExt, Constants.ArmPorts.FrontRightArmRot, 1, "FrontRight");
+    backLeftSub = new Arm1(Constants.ArmPorts.BackLeftArmExt, Constants.ArmPorts.BackLeftArmRot, 2, "BackLeft");
+    backRightSub = new Arm1(Constants.ArmPorts.BackRightArmExt, Constants.ArmPorts.BackRightArmRot, 3, "BackRight");
+    frontLeftCom = new ArmMoveTeleop(frontLeftSub, joy1);
+    frontRightCom = new ArmMoveTeleop(frontRightSub, joy2);
+    backLeftCom = new ArmMoveTeleop(backLeftSub, joy3);
+    backRightCom = new ArmMoveTeleop(backRightSub, joy4);
+    frontLeftSub.setDefaultCommand(frontLeftCom);
+    frontRightSub.setDefaultCommand(frontRightCom);
+    backLeftSub.setDefaultCommand(backLeftCom);
+    backRightSub.setDefaultCommand(backRightCom);
+    fourArmMoveTeleop = new FourArmMoveTeleop(frontLeftSub, frontRightSub, backLeftSub, backRightSub);
+
     //rotatePID = new RotatePID(20);
     //extend = new ArmExtend(5);
     extendSeq = new ArmExtendSeq();
 
-    configureButtonBindings();
+    //configureButtonBindings();
   }
 
   /**
@@ -104,6 +120,37 @@ public class RobotContainer {
      but6.whenPressed(frontRightCom);
      but3.whenPressed(backLeftCom);
      but4.whenPressed(backRightCom);
+     but2.whenPressed(fourArmMoveTeleop);
+
+     but5.cancelWhenPressed(frontRightCom);
+     but5.cancelWhenPressed(backLeftCom);
+     but5.cancelWhenPressed(backRightCom);
+     but5.cancelWhenPressed(fourArmMoveTeleop);
+     but6.cancelWhenPressed(frontLeftCom);
+     but6.cancelWhenPressed(backLeftCom);
+     but6.cancelWhenPressed(backRightCom);
+     but6.cancelWhenPressed(fourArmMoveTeleop);
+     but3.cancelWhenPressed(frontLeftCom);
+     but3.cancelWhenPressed(frontRightCom);
+     but3.cancelWhenPressed(backRightCom);
+     but3.cancelWhenPressed(fourArmMoveTeleop);
+     but4.cancelWhenPressed(frontLeftCom);
+     but4.cancelWhenPressed(frontRightCom);
+     but4.cancelWhenPressed(backLeftCom);
+     but4.cancelWhenPressed(fourArmMoveTeleop);
+     but2.cancelWhenPressed(frontLeftCom);
+     but2.cancelWhenPressed(frontRightCom);
+     but2.cancelWhenPressed(backLeftCom);
+     but2.cancelWhenPressed(backRightCom);
+
+     activateHolding();
+  }
+
+  public static void activateHolding() {
+    frontLeftSub.setDefaultCommand(new DefaultExtend(frontLeftSub, -0.2));
+    frontRightSub.setDefaultCommand(new DefaultExtend(frontRightSub, -0.2));
+    backLeftSub.setDefaultCommand(new DefaultExtend(backLeftSub, -0.2));
+    backRightSub.setDefaultCommand(new DefaultExtend(backRightSub, -0.2));
   }
 
   /**
@@ -124,9 +171,9 @@ public class RobotContainer {
     return limelight;
   }
 
-  public static Arm getArm(){
+ /* public static Arm getArm(){
     return arm;
-  }
+  }*/
 
   public static Joystick getJoy1(){
     return joy1;
@@ -134,6 +181,10 @@ public class RobotContainer {
 
   public static Joystick getJoy2(){
     return joy2;
+  }
+
+  public static Joystick getJoy3() {
+    return joy3;
   }
 
   public static Ultrasonic getUltrasonic() {

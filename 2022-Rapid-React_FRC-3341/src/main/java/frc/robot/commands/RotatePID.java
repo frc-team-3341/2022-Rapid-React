@@ -25,7 +25,7 @@ public class RotatePID extends CommandBase {
 
   public RotatePID(int motorNum, double angle) {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.getArm());
+   // addRequirements(RobotContainer.getArm());
     this.angle = angle;
     this.motorNum = motorNum;
     time = new Timer();
@@ -52,12 +52,12 @@ public class RotatePID extends CommandBase {
     double dt = currTime - prevTime;
     prevTime = currTime;
 
-    pid.calculate(RobotContainer.getArm().getArmPosition(motorNum));
+    //pid.calculate(RobotContainer.getArm().getArmPosition(motorNum));
     errorAccum += (posError) * dt;
 
     double pidPower = (kp * posError) + (ki * errorAccum);
 
-    RobotContainer.getArm().rotate(1, pidPower);
+    //RobotContainer.getArm().rotate(1, pidPower);
 
 
 

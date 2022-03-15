@@ -17,29 +17,29 @@ public class ArmExtend extends CommandBase {
   public ArmExtend(int motorNum, int lineNum) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.lineNum = lineNum;
-    if(lineNum < RobotContainer.getArm().getArmMinPos()) lineNum = RobotContainer.getArm().getArmMinPos();
-    if(lineNum > RobotContainer.getArm().getArmMaxPos()) lineNum = RobotContainer.getArm().getArmMaxPos();
-    addRequirements(RobotContainer.getArm());
+    //if(lineNum < RobotContainer.getArm().getArmMinPos()) lineNum = RobotContainer.getArm().getArmMinPos();
+    //if(lineNum > RobotContainer.getArm().getArmMaxPos()) lineNum = RobotContainer.getArm().getArmMaxPos();
+    //addRequirements(RobotContainer.getArm());
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    currPos = RobotContainer.getArm().getArmExtPos(motorNum);
-    RobotContainer.getArm().setExtBrake(motorNum, false);
+  //currPos = RobotContainer.getArm().getArmExtPos(motorNum);
+   // RobotContainer.getArm().setExtBrake(motorNum, false);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
 
-    currPos = RobotContainer.getArm().getArmExtPos(motorNum);
+    /*currPos = RobotContainer.getArm().getArmExtPos(motorNum);
 
     if(lineNum > currPos){
       RobotContainer.getArm().extend(motorNum, 0.5);
     } else if(lineNum < currPos){
       RobotContainer.getArm().extend(motorNum, -0.5);
-    }
+    }*/
     
   }
 
@@ -47,14 +47,14 @@ public class ArmExtend extends CommandBase {
   @Override
   public void end(boolean interrupted) {
     
-    RobotContainer.getArm().extend(motorNum, 0); 
-    RobotContainer.getArm().setExtBrake(motorNum, true);
+    //RobotContainer.getArm().extend(motorNum, 0); 
+    //RobotContainer.getArm().setExtBrake(motorNum, true);
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    //return false;
-    return (lineNum == RobotContainer.getArm().getArmExtPos(motorNum));
+    return false;
+    //return (lineNum == RobotContainer.getArm().getArmExtPos(motorNum));
   }
 }

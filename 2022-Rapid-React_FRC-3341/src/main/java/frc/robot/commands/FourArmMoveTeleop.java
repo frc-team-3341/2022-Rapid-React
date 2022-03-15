@@ -24,14 +24,20 @@ public class FourArmMoveTeleop extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    arm1.setExtBrake(false);
+    arm2.setExtBrake(false);
+    arm3.setExtBrake(false);
+    arm4.setExtBrake(false);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double POV = RobotContainer.getJoy1().getPOV();
+    double POV = RobotContainer.getJoy3().getPOV();
     
-    if((POV >= 0 && POV < 70) || (POV >= 250)){
+    if((POV >= 0 && POV < 70) || (POV >= 290)){
+      /*
       if(RobotContainer.getJoy1().getRawButtonPressed(1)){
         //power level will be changed with testing
         arm1.extend(0.1);
@@ -39,8 +45,18 @@ public class FourArmMoveTeleop extends CommandBase {
         arm3.extend(0.1);
         arm4.extend(0.1);
       }
+      */
+      arm1.extend(1);
+      arm2.extend(1);
+      arm3.extend(1);
+      arm4.extend(1);
+      arm1.setExtBrake(false);
+      arm2.setExtBrake(false);
+      arm3.setExtBrake(false);
+      arm4.setExtBrake(false);
     }
     else if(POV >= 110 && POV <= 250){
+      /*
       if(RobotContainer.getJoy1().getRawButtonPressed(1)){
         //power level will be changed with testing
         arm1.extend(-0.1);
@@ -48,6 +64,24 @@ public class FourArmMoveTeleop extends CommandBase {
         arm3.extend(-0.1);
         arm4.extend(-0.1);
       }
+      */
+      arm1.extend(-1);
+      arm2.extend(-1);
+      arm3.extend(-1);
+      arm4.extend(-1);
+      arm1.setExtBrake(false);
+      arm2.setExtBrake(false);
+      arm3.setExtBrake(false);
+      arm4.setExtBrake(false);
+    } else {
+      arm1.extend(0);
+      arm2.extend(0);
+      arm3.extend(0);
+      arm4.extend(0);
+      arm1.setExtBrake(true);
+      arm2.setExtBrake(true);
+      arm3.setExtBrake(true);
+      arm4.setExtBrake(true);
     }
   }
 
@@ -58,6 +92,10 @@ public class FourArmMoveTeleop extends CommandBase {
     arm2.extend(0);
     arm3.extend(0);
     arm4.extend(0);
+    arm1.setExtBrake(true);
+    arm2.setExtBrake(true);
+    arm3.setExtBrake(true);
+    arm4.setExtBrake(true);
   }
 
   // Returns true when the command should end.

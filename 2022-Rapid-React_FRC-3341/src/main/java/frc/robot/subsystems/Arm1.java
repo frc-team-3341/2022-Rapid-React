@@ -11,9 +11,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 
-import edu.wpi.first.wpilibj.DigitalInput;
+//import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.DigitalInput;
 import frc.robot.RobotContainer;
 
 public class Arm1 extends SubsystemBase {
@@ -25,21 +26,21 @@ public class Arm1 extends SubsystemBase {
   private int armExtPos;
   private double armPower;
   private boolean armExtPrevState;
-  private String armName;
   private final int minArmState = 0;
   private final int maxArmState = 5;
+  private String armName;
 
   public Arm1(int extendID, int rotateID, int inputID, String armName) {
 
       armExtPos = 0;
       armPower = 0;
-      armExtPrevState = isOnTape();
       this.armName = armName;
 
 
       extend = new WPI_TalonSRX(extendID);
       rotate = new WPI_TalonSRX(rotateID);
       input = new DigitalInput(inputID);
+      armExtPrevState = isOnTape();
       
       extend.configFactoryDefault();
       rotate.configFactoryDefault();
@@ -48,6 +49,15 @@ public class Arm1 extends SubsystemBase {
       rotate.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
       rotate.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Absolute, 0, 10);
       extend.configReverseLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed);
+
+      if (armName.equals("FrontLeft") || armName.equals("BackLeft")) {
+        rotate.setInverted(true);
+      } else {
+        rotate.setInverted(false);
+      }
+
+      setExtBrake(true);
+      setRotBrake(true);
   }
 
   public String getArmName(){
@@ -57,7 +67,7 @@ public class Arm1 extends SubsystemBase {
   //EXTENSION METHODS
   public void extend(double power){
     extend.set(ControlMode.PercentOutput, power);
-    armPower = power;
+    //armPower = power;
   }
 
   public double getExtCurrent(){
@@ -99,6 +109,11 @@ public class Arm1 extends SubsystemBase {
     rotate.setSelectedSensorPosition(0, 0, 10);
   }
 
+  public void setRotBrake(boolean isBrake){
+    if(isBrake) extend.setNeutralMode(NeutralMode.Brake);
+    else extend.setNeutralMode(NeutralMode.Coast);
+  }
+
   //COUNTING METHODS
   public boolean isOnTape(){
     return input.get();
@@ -136,11 +151,14 @@ public class Arm1 extends SubsystemBase {
       resetArm();
     }
 
+    //extend(RobotContainer.getJoy2().getY());
+
     SmartDashboard.putNumber(armName + "RotLSFwd", isRotFwdLSClosed());
     SmartDashboard.putNumber(armName + "RotLSRev", isRotRevLSClosed());
     SmartDashboard.putNumber(armName + "ExtLS", isExtLSClosed());
     SmartDashboard.putNumber(armName + "Current", getExtCurrent());
     SmartDashboard.putNumber(armName + "TapeCount", getArmExtPos());
+    SmartDashboard.putBoolean(armName + "ReflectiveSensor", isOnTape());
 
     SmartDashboard.putNumber("joyY", RobotContainer.getJoy1().getY());
     SmartDashboard.putNumber("POV", RobotContainer.getJoy1().getPOV());
