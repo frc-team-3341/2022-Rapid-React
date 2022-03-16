@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.RobotContainer;
 
   
 
@@ -18,6 +19,7 @@ public class TankDrive extends CommandBase {
   private final DriveTrain _driveTrain;
   private final Joystick _leftJoystick;
   private final Joystick _rightJoystick;
+
   public TankDrive(DriveTrain dt, Joystick leftJ, Joystick rightJ) {
     // Use addRequirements() here to declare subsystem dependencies.
     _driveTrain = dt;
@@ -35,7 +37,14 @@ public class TankDrive extends CommandBase {
   @Override
   public void execute() 
   {
-    _driveTrain.tankDrive(-0.8 * _leftJoystick.getRawAxis(Constants.JoystickAxis.YAxis), -0.8 * _rightJoystick.getRawAxis(Constants.JoystickAxis.YAxis)); 
+
+    if (RobotContainer.getJoy1().getRawButtonPressed(12)) {
+      RobotContainer.switchIsDriving();
+    }
+    
+    if (RobotContainer.getIsDriving()) {
+      _driveTrain.tankDrive(-0.8 * _leftJoystick.getRawAxis(Constants.JoystickAxis.YAxis), -0.8 * _rightJoystick.getRawAxis(Constants.JoystickAxis.YAxis));
+    } 
   }
                         
   // Called once the command ends or is interrupted.

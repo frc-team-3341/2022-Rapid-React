@@ -37,7 +37,9 @@ public class ArmMoveTeleop extends CommandBase {
         Y-axis controls rotation
       */
      // SmartDashboard.putString("armNum Command", armSub.getName());
-      double joyY = joy.getY();
+
+      if (!RobotContainer.getIsDriving()) {
+        double joyY = joy.getY();
       //double joyX = RobotContainer.getJoy1().getX();
       double POV = joy.getPOV();
 
@@ -80,6 +82,7 @@ public class ArmMoveTeleop extends CommandBase {
       }
 
       SmartDashboard.putNumber("ARM ROTATION POWER", joyY*0.2);
+      }
   }
 
   // Called once the command ends or is interrupted.

@@ -20,6 +20,7 @@ import frc.robot.subsystems.DriveTrain;
 
 import frc.robot.commands.ArmExtend;
 import frc.robot.commands.TankDrive;
+import frc.robot.commands.setDefaultCommand;
 import frc.robot.commands.RotatePID;
 import frc.robot.commands.ArmExtendSeq;
 import frc.robot.commands.ArmMoveTeleop;
@@ -38,8 +39,8 @@ public class RobotContainer {
   private static Ultrasonic ultrasonicSensor;
   private static Limelight limelight;
   private static RotatePID rotatePID;
-  //private static DriveTrain _DriveTrain;
-  //private final TankDrive _tankDrive;
+  private static DriveTrain _DriveTrain;
+  private final TankDrive _tankDrive;
 
   private static Arm1 frontLeftSub;
   private static Arm1 frontRightSub;
@@ -53,6 +54,7 @@ public class RobotContainer {
   //private static Arm arm;
   private static ArmExtend extend;
   private static ArmExtendSeq extendSeq;
+  private static setDefaultCommand armDefault;
 
   public static Joystick joy1;
   public static Joystick joy2;
@@ -64,6 +66,9 @@ public class RobotContainer {
   public static JoystickButton but3;
   public static JoystickButton but4;
   public static JoystickButton but2;
+  public static JoystickButton but12;
+
+  private static Boolean isDriving;
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -79,12 +84,16 @@ public class RobotContainer {
     but4 = new JoystickButton(joy3, 4);
     but2 = new JoystickButton(joy3, 2);*/
 
+    but12 = new JoystickButton(joy1, 12);
+    
+    isDriving = true;
+
     //ultrasonicSensor = new MaxbotixUltrasonicSensor(Constants.I2CAddresses.MaxbotixUltrasonicSensor);
     limelight = new Limelight();
     //ultrasonicSensor = new Ultrasonic();
-    /*_DriveTrain = new DriveTrain();
+    _DriveTrain = new DriveTrain();
     _tankDrive = new TankDrive(_DriveTrain, joy1, joy2);
-    _DriveTrain.setDefaultCommand(_tankDrive);*/
+    _DriveTrain.setDefaultCommand(_tankDrive);
     
 
     //arm = new Arm();
@@ -100,13 +109,14 @@ public class RobotContainer {
     frontRightSub.setDefaultCommand(frontRightCom);
     backLeftSub.setDefaultCommand(backLeftCom);
     backRightSub.setDefaultCommand(backRightCom);
-    fourArmMoveTeleop = new FourArmMoveTeleop(frontLeftSub, frontRightSub, backLeftSub, backRightSub);
+    //armDefault = new setDefaultCommand(frontLeftSub, frontRightSub, backLeftSub, backRightSub, _DriveTrain);
+    //fourArmMoveTeleop = new FourArmMoveTeleop(frontLeftSub, frontRightSub, backLeftSub, backRightSub);
 
     //rotatePID = new RotatePID(20);
     //extend = new ArmExtend(5);
     extendSeq = new ArmExtendSeq();
 
-    //configureButtonBindings();
+    configureButtonBindings();
   }
 
   /**
@@ -116,6 +126,8 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    //but12.toggleWhenPressed(armDefault);
+    /*
      but5.whenPressed(frontLeftCom);
      but6.whenPressed(frontRightCom);
      but3.whenPressed(backLeftCom);
@@ -144,6 +156,7 @@ public class RobotContainer {
      but2.cancelWhenPressed(backRightCom);
 
      activateHolding();
+     */
   }
 
   public static void activateHolding() {
@@ -187,8 +200,20 @@ public class RobotContainer {
     return joy3;
   }
 
+  public static Joystick getJoy4() {
+    return joy4;
+  }
+
   public static Ultrasonic getUltrasonic() {
     return ultrasonicSensor;
+  }
+
+  public static Boolean getIsDriving() {
+    return isDriving;
+  }
+
+  public static void switchIsDriving() {
+    isDriving = !isDriving;
   }
 
 }
