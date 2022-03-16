@@ -14,11 +14,13 @@ public class ArmMoveTeleop extends CommandBase {
   /** Creates a new ArmMoveTeleop. */
   private Arm1 armSub;
   private Joystick joy;
+  private boolean isHolding;
 
   public ArmMoveTeleop(Arm1 armSubsystem, Joystick joy) {
     // Use addRequirements() here to declare subsystem dependencies.
     armSub = armSubsystem;
     this.joy = joy;
+    isHolding = false;
     addRequirements(armSubsystem);
   }
 
@@ -43,7 +45,7 @@ public class ArmMoveTeleop extends CommandBase {
       //double joyX = RobotContainer.getJoy1().getX();
       double POV = joy.getPOV();
 
-      joyY *= -1;
+      //joyY *= -1;
       
       if((POV >= 0 && POV < 70) || (POV >= 290)){
         /*
@@ -72,6 +74,12 @@ public class ArmMoveTeleop extends CommandBase {
         armSub.extend(0);
         armSub.setExtBrake(true);
       }
+
+      if(joy.getRawButtonPressed(1) ){
+        isHolding = !isHolding;  
+      }
+
+      if(isHolding) armSub.extend(-0.2);
 
       if (Math.abs(joyY) > 0.1) {
         armSub.setRotBrake(false);
