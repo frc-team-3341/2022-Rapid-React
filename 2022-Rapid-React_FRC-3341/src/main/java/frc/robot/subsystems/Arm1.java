@@ -153,7 +153,7 @@ public class Arm1 extends SubsystemBase {
 
     //extend(RobotContainer.getJoy2().getY());
 
-    SmartDashboard.putNumber(armName + "RotLSFwd", isRotFwdLSClosed());
+    /*SmartDashboard.putNumber(armName + "RotLSFwd", isRotFwdLSClosed());
     SmartDashboard.putNumber(armName + "RotLSRev", isRotRevLSClosed());
     SmartDashboard.putNumber(armName + "ExtLS", isExtLSClosed());
     SmartDashboard.putNumber(armName + "Current", getExtCurrent());
@@ -166,6 +166,6 @@ public class Arm1 extends SubsystemBase {
     SmartDashboard.putBoolean("but5", RobotContainer.getJoy1().getRawButton(5));
     SmartDashboard.putBoolean("but6", RobotContainer.getJoy1().getRawButton(6));
     SmartDashboard.putBoolean("but3", RobotContainer.getJoy1().getRawButton(3));
-    SmartDashboard.putBoolean("but4", RobotContainer.getJoy1().getRawButton(4));
+    SmartDashboard.putBoolean("but4", RobotContainer.getJoy1().getRawButton(4));*/
   }
 }

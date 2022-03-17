@@ -14,6 +14,10 @@ package frc.robot;
  */
 public final class Constants 
 {
+    public static class I2CAddresses {
+        public static final int MaxbotixUltrasonicSensor = 112;
+    }
+    
     public static final class DriveTrainPorts
     {
         public static final int LeftDriveTalonPort = 2; 
@@ -42,11 +46,41 @@ public final class Constants
         public static final int BackRightSens = 3;
     }
 
-    public static final class BallPorts{
-        public static final int BallPivot = 14; //encoder
-        public static final int BallIntake = 15; //victor
-        public static final int BallLeftFly = 16; //encoder
-        public static final int BallRightFly = 17; //encoder
+    public static final class BallHandlerPorts {
+        public static final int leftFlywheelPort = 16;
+        public static final int rightFlywheelPort = 17;
+        public static final int pivotPort = 14;
+        public static final int rollerPort = 15;
+    }
+
+    public static final class leftFlywheelPIDConsts {
+        public static double pidP = 0.07;
+        public static double pidI = 0;
+        public static double pidD = 0;
+    }
+
+    public static final class rightFlywheelPIDConsts {
+        public static double pidP = 0.07;
+        public static double pidI = 0;
+        public static double pidD = 0;
+    }
+
+    public static final class pivotPIDConsts {
+        public static final double pidP = 0.05;
+        public static final double pidI = 0;
+        public static final double pidD = 0;
+    }
+
+    public static final class leftFlywheelFF { // Tested on last year's chassis, not this year!
+        public static final double kS = 0.41733;
+        public static final double kV = 0.4025;
+        public static final double kA = 0.046839;
+    }
+
+    public static final class rightFlywheelFF { // Tested on last year's chassis, not this year!
+        public static final double kS = 0.41733;
+        public static final double kV = 0.4025;
+        public static final double kA = 0.046839;
     }
 
     public static final class JoystickAxis 
@@ -60,5 +94,8 @@ public final class Constants
         public static final int One = 1;
 
     }
+
+    public static final double angularOffset = 90.0;
+    public static final double shootingAngle = 70;
 }
 

@@ -6,6 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveTrain;
 
 /** An example command that uses an example subsystem. */
@@ -19,8 +20,15 @@ public class AutoDriveForward extends CommandBase
   private double kP = 0.7; //test constant later
   private int direction; //0 for forward, 1 for backward
 
+  /**
+  @param dist - Distance in meters
+  */
+
   public AutoDriveForward(DriveTrain dt, double dist) 
   {
+    double ultraDistance = RobotContainer.getUltrasonic().getDistance();
+    dist += ultraDistance;
+
     distance = Math.abs(dist);
     _DriveTrain = dt;
     addRequirements(_DriveTrain);

@@ -89,7 +89,7 @@ public class ArmMoveTeleop extends CommandBase {
         armSub.setRotBrake(true);
       }
 
-      SmartDashboard.putNumber("ARM ROTATION POWER", joyY*0.2);
+      //SmartDashboard.putNumber("ARM ROTATION POWER", joyY*0.2);
       }
   }
 
