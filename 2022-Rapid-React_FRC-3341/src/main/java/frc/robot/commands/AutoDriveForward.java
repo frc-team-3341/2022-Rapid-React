@@ -26,8 +26,8 @@ public class AutoDriveForward extends CommandBase
 
   public AutoDriveForward(DriveTrain dt, double dist) 
   {
-    double ultraDistance = RobotContainer.getUltrasonic().getDistance();
-    dist += ultraDistance;
+    //double ultraDistance = RobotContainer.getUltrasonic().getDistance();
+    //dist += ultraDistance;
 
     distance = Math.abs(dist);
     _DriveTrain = dt;

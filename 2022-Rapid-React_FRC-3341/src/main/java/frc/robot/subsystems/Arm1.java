@@ -152,11 +152,11 @@ public class Arm1 extends SubsystemBase {
     }
 
     //extend(RobotContainer.getJoy2().getY());
-
+    SmartDashboard.putNumber(armName + "Current", getExtCurrent());
     /*SmartDashboard.putNumber(armName + "RotLSFwd", isRotFwdLSClosed());
     SmartDashboard.putNumber(armName + "RotLSRev", isRotRevLSClosed());
     SmartDashboard.putNumber(armName + "ExtLS", isExtLSClosed());
-    SmartDashboard.putNumber(armName + "Current", getExtCurrent());
+    
     SmartDashboard.putNumber(armName + "TapeCount", getArmExtPos());
     SmartDashboard.putBoolean(armName + "ReflectiveSensor", isOnTape());
 

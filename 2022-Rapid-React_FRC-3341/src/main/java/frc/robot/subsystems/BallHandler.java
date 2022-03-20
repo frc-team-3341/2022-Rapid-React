@@ -46,7 +46,7 @@ public class BallHandler extends SubsystemBase {
   // We set the reverse limit switch to zero and add 90 from there
   private double offset = Constants.angularOffset;
 
-  private double maxHorizontalPower = 0.1; // Percent of volts, negative!?
+  private double maxHorizontalPower = 0.05; // Percent of volts, negative!?
 
   private Timer timer = new Timer();
 
@@ -84,7 +84,7 @@ public class BallHandler extends SubsystemBase {
   // Overriden with testing Constants for flywheels and pivot
   private final PIDController leftFlywheelPID = new PIDController(leftFlywheelTestInputPIDP.getDouble(Constants.leftFlywheelPIDConsts.pidP), leftFlywheelTestInputPIDI.getDouble(Constants.leftFlywheelPIDConsts.pidI), leftFlywheelTestInputPIDD.getDouble(Constants.leftFlywheelPIDConsts.pidD));
   private final PIDController rightFlywheelPID = new PIDController(rightFlywheelTestInputPIDP.getDouble(Constants.rightFlywheelPIDConsts.pidP), rightFlywheelTestInputPIDI.getDouble(Constants.rightFlywheelPIDConsts.pidI), rightFlywheelTestInputPIDD.getDouble(Constants.rightFlywheelPIDConsts.pidD));
-  private final PIDController pivotPID = new PIDController(0.035, 0, 0);
+  private final PIDController pivotPID = new PIDController(0.008, 0.00, 0);
 
   private SimpleMotorFeedforward leftFlywheelFF = new SimpleMotorFeedforward(Constants.leftFlywheelFF.kS, Constants.leftFlywheelFF.kV, Constants.leftFlywheelFF.kA);
   private SimpleMotorFeedforward rightFlywheelFF = new SimpleMotorFeedforward(Constants.rightFlywheelFF.kS, Constants.rightFlywheelFF.kV, Constants.rightFlywheelFF.kA);
@@ -122,7 +122,8 @@ public class BallHandler extends SubsystemBase {
     //pivotPID.setPID(pivotTestInputPIDP.getDouble(Constants.pivotPIDConsts.pidP), pivotTestInputPIDI.getDouble(Constants.pivotPIDConsts.pidI), pivotTestInputPIDD.getDouble(Constants.pivotPIDConsts.pidD));
     leftFlywheelPID.setTolerance(flywheelTolerance);
     rightFlywheelPID.setTolerance(flywheelTolerance);
-    pivotPID.setTolerance(1);
+    pivotPID.setTolerance(2);
+    pivotPID.setIntegratorRange(-0.2, 0.2);
   }
 
   public double getTicks(WPI_TalonSRX motor) {
@@ -218,6 +219,7 @@ public class BallHandler extends SubsystemBase {
 
   public boolean isReverseLimitClosed() {
     if(pivot.isRevLimitSwitchClosed() == 1) {
+
       return true;
     }
     else {
@@ -272,6 +274,24 @@ public class BallHandler extends SubsystemBase {
     return roller.getSelectedSensorPosition();
   }
 
+  public void setAnglePower(){
+    double ffCos = Math.cos(Math.toRadians(getPivotPosition()) + 25);
+
+    setPivotPower(pivotPID.calculate(getPivotPosition()) + ffCos*maxHorizontalPower);
+  }
+
+  public double getPositionError(){
+    return pivotPID.getPositionError();
+  }
+
+  public void pidReset(){
+    pivotPID.reset();
+  }
+
+  public PIDController getPIDController(){
+    return pivotPID;
+  }
+
   @Override
   public void periodic() {
 
@@ -320,29 +340,27 @@ public class BallHandler extends SubsystemBase {
       setPivotPower(RobotContainer.getJoy4().getY());
     }
     else { */
-    double ffCos = Math.cos(Math.toRadians(getPivotPosition()));
+    double ffCos = Math.cos(Math.toRadians(getPivotPosition()) + 25);
     SmartDashboard.putNumber("Pivot Angle", getPivotPosition());
+    SmartDashboard.putNumber("Pivot Angle No Offset", getRawPivotPositionNotOffset());
     SmartDashboard.putNumber("Pivot Power", pivotPower);
+    SmartDashboard.putNumber("Pivot Setpoint", pivotPID.getSetpoint());
     if (RobotContainer.getIsDriving()) {
       //angleTimer.reset();
       //if (angleTimer.get() >= angleTime) {
         if (RobotContainer.getJoy4().getRawButtonPressed(5)) {
           angle = 90;
+          pivotPID.reset();
         } else if (RobotContainer.getJoy4().getRawButtonPressed(3)) {
           angle = 80;
+          pivotPID.reset();
         } else if (RobotContainer.getJoy4().getRawButtonPressed(4)) {
-          angle = 65;
+          angle = 68;
+          pivotPID.reset();
         } else if (RobotContainer.getJoy4().getRawButtonPressed(6)) {
           angle = -45 ;
+          pivotPID.reset();
         }
-
-        if(pivotPID.atSetpoint()){
-          pivot.setNeutralMode(NeutralMode.Brake);
-        }else{
-          pivot.setNeutralMode(NeutralMode.Coast);
-        }
-        pivotPID.setSetpoint(angle);
-        setPivotPower(pivotPID.calculate(getPivotPosition()) + ffCos*maxHorizontalPower);
        // SmartDashboard.putNumber("PivotPIDPowerCalc:", pivotPID.calculate(getPivotPosition()));
        // SmartDashboard.putNumber("PivotCalculatedPower", pivotPID.calculate(getPivotPosition()) + ffCos*maxHorizontalPower);
       //}
@@ -367,13 +385,19 @@ public class BallHandler extends SubsystemBase {
     
     //pivotPID.setSetpoint(angle);
     //SmartDashboard.putNumber("Pivot FF", ffCos*maxHorizontalPower);
-    SmartDashboard.putNumber("Pivot Setpoint", pivotPID.getSetpoint());
+    if(pivotPID.atSetpoint()){
+      pivot.setNeutralMode(NeutralMode.Brake);
+    }else{
+      pivot.setNeutralMode(NeutralMode.Coast);
+    }
+    pivotPID.setSetpoint(angle);
+    setPivotPower(pivotPID.calculate(getPivotPosition()) + ffCos*maxHorizontalPower);
     
-    if (getPivotPosition() < 80) {
-      pivotPID.setP(0.01);
+   /* if (getPivotPosition() < 80) {
+      pivotPID.setP(0.005);
     } else {
       pivotPID.setP(0.035);
-    }
+    }*/
     
     // These methods just set the PID controller's constants so that we can tune them if needed
     //leftFlywheelPID.setPID(leftFlywheelTestInputPIDP.getDouble(Constants.leftFlywheelPIDConsts.pidP), leftFlywheelTestInputPIDI.getDouble(Constants.leftFlywheelPIDConsts.pidI), leftFlywheelTestInputPIDD.getDouble(Constants.leftFlywheelPIDConsts.pidD));

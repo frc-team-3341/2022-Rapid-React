@@ -30,9 +30,9 @@ public class Limelight extends SubsystemBase {
     double y = ty.getDouble(0.0);
     double area = ta.getDouble(0.0);
 
-    SmartDashboard.putNumber("LimelightX", x);
+    /*SmartDashboard.putNumber("LimelightX", x);
     SmartDashboard.putNumber("LimelightY", y);
-    SmartDashboard.putNumber("LimelightArea", area);
+    SmartDashboard.putNumber("LimelightArea", area);*/
   }
 
   public void setRedPipeline(){

@@ -97,7 +97,9 @@ public class DriveTrain extends SubsystemBase
   }
 
   @Override
-  public void periodic() {}
+  public void periodic() {
+    SmartDashboard.putNumber("NavX angle", getAngle());
+  }
 
   @Override
   public void simulationPeriodic() 

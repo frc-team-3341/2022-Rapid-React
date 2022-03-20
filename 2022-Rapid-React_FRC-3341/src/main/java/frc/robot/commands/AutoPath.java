@@ -14,7 +14,7 @@ public class AutoPath extends SequentialCommandGroup
     public AutoPath()
     {
         System.out.print("PATH RUN!");
-        // addCommands(new AutoDriveForward(RobotContainer.getDriveTrain(), -2.45), new AutoSetAnglePID(Constants.shootingAngle), new AutoSimpleShoot());
-        addCommands(new AutoDriveForward(RobotContainer.getDriveTrain(), -2.29));
+        //addCommands(new BallShoot(65));
+       addCommands(new AutoDriveForward(RobotContainer.getDriveTrain(), -0.55), new BallShoot(65), new AutoDriveForward(RobotContainer.getDriveTrain(), -0.45));
     }
 }

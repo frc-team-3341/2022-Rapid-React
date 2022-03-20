@@ -40,7 +40,7 @@ public class TankDrive extends CommandBase {
   @Override
   public void execute() 
   {
-
+    SmartDashboard.putBoolean("isDriving", RobotContainer.getIsDriving());
     if (RobotContainer.getJoy1().getRawButtonPressed(12) || RobotContainer.getJoy2().getRawButtonPressed(12) || RobotContainer.getJoy3().getRawButtonPressed(12) || RobotContainer.getJoy4().getRawButtonPressed(12)) {
       RobotContainer.switchIsDriving();
     }
@@ -48,9 +48,10 @@ public class TankDrive extends CommandBase {
     if (RobotContainer.getIsDriving()) {
       _driveTrain.tankDrive(-0.8 * _leftJoystick.getRawAxis(Constants.JoystickAxis.YAxis), -0.8 * _rightJoystick.getRawAxis(Constants.JoystickAxis.YAxis));
     } else {
-       if (RobotContainer.getBallHandler().isReverseLimitClosed()){
          RobotContainer.getBallHandler().setPivotAngle(90.0); // For safety when climbing
-       }
+         RobotContainer.getBallHandler().setFlywheelPower(0.0);
+         RobotContainer.getBallHandler().setRollerPower(0.0);
+         _driveTrain.tankDrive(0, 0);
     }
   }
                         
