@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -45,6 +46,15 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
     //RobotContainer.getLimelight().update();
+    //ultrasonic data put on smart dashboard (adding 0.63 to get distance from back of shooter to target)
+    if (RobotContainer.getUltrasonic().canRead()) {
+      SmartDashboard.putNumber("Ultrasonic Distance: ", RobotContainer.getUltrasonic().getDistance());
+    }
+    /*
+    if (RobotContainer.getJoy2().getRawButton(12)) {
+      RobotContainer.activateHolding();
+    }
+    */
   }
 
   /** This function is called once each time the robot enters Disabled mode. */

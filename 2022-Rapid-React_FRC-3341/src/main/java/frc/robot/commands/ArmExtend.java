@@ -12,46 +12,49 @@ public class ArmExtend extends CommandBase {
   /** Creates a new ArmExtend. */
   private int lineNum;
   private int currPos;
+  private int motorNum;
 
-  public ArmExtend(int lineNum) {
+  public ArmExtend(int motorNum, int lineNum) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.lineNum = lineNum;
-    if(lineNum < RobotContainer.getArm().getArmMinPos()) lineNum = RobotContainer.getArm().getArmMinPos();
-    if(lineNum > RobotContainer.getArm().getArmMaxPos()) lineNum = RobotContainer.getArm().getArmMaxPos();
-    addRequirements(RobotContainer.getArm());
+    //if(lineNum < RobotContainer.getArm().getArmMinPos()) lineNum = RobotContainer.getArm().getArmMinPos();
+    //if(lineNum > RobotContainer.getArm().getArmMaxPos()) lineNum = RobotContainer.getArm().getArmMaxPos();
+    //addRequirements(RobotContainer.getArm());
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    currPos = RobotContainer.getArm().getArmExtPos();
+  //currPos = RobotContainer.getArm().getArmExtPos(motorNum);
+   // RobotContainer.getArm().setExtBrake(motorNum, false);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //RobotContainer.getArm().armCount();
-    
-    currPos = RobotContainer.getArm().getArmExtPos();
+
+    /*currPos = RobotContainer.getArm().getArmExtPos(motorNum);
 
     if(lineNum > currPos){
-      RobotContainer.getArm().extendPow(-0.1);
-    }else if(lineNum < currPos){
-      RobotContainer.getArm().extendPow(0.1);
-    }
+      RobotContainer.getArm().extend(motorNum, 0.5);
+    } else if(lineNum < currPos){
+      RobotContainer.getArm().extend(motorNum, -0.5);
+    }*/
     
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.getArm().extendPow(0); 
+    
+    //RobotContainer.getArm().extend(motorNum, 0); 
+    //RobotContainer.getArm().setExtBrake(motorNum, true);
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    SmartDashboard.putString("isFinished:", "true");
-    return (lineNum == RobotContainer.getArm().getArmExtPos());
+    return false;
+    //return (lineNum == RobotContainer.getArm().getArmExtPos(motorNum));
   }
 }

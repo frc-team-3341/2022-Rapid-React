@@ -4,28 +4,31 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Arm1;
 
-public class testAccumulate extends CommandBase {
-  /** Creates a new testAccumulate. */
-  private int test;
+public class DefaultExtend extends CommandBase {
+  /** Creates a new DefaultExtend. */
+  private Arm1 armSub;
+  double power;
 
-  public testAccumulate() {
+  public DefaultExtend(Arm1 armSub, double power) {
     // Use addRequirements() here to declare subsystem dependencies.
+    this.armSub = armSub;
+    this.power = power;
+    addRequirements(armSub);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    test = 0;
+    armSub.setExtBrake(false);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    test++;
-    SmartDashboard.putNumber("TEST:", test);
+    armSub.extend(power);
   }
 
   // Called once the command ends or is interrupted.
@@ -35,6 +38,6 @@ public class testAccumulate extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return test == 7;
+    return false;
   }
 }

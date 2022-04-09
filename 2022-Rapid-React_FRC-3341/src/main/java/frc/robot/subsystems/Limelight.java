@@ -2,6 +2,7 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
+//http://10.33.41.11:5800
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -29,9 +30,9 @@ public class Limelight extends SubsystemBase {
     double y = ty.getDouble(0.0);
     double area = ta.getDouble(0.0);
 
-    SmartDashboard.putNumber("LimelightX", x);
+    /*SmartDashboard.putNumber("LimelightX", x);
     SmartDashboard.putNumber("LimelightY", y);
-    SmartDashboard.putNumber("LimelightArea", area);
+    SmartDashboard.putNumber("LimelightArea", area);*/
   }
 
   public void setRedPipeline(){
@@ -49,10 +50,10 @@ public class Limelight extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run 
-    update();
+    //update();
     //setBluePipeline();
     //setRedPipeline();
-    setTapePipeline();
+    //setTapePipeline();
     
   }
 }

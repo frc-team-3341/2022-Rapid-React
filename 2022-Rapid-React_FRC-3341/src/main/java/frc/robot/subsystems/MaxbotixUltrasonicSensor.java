@@ -1,4 +1,3 @@
-
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
@@ -9,7 +8,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.I2C;
-/** Class for reporting data from Maxbotix I2CXL MaxSonar sensors.*/ 
+/** Class for reporting data from Maxbotix I2CXL MaxSonar sensors. */
 public class MaxbotixUltrasonicSensor extends SubsystemBase {
   
   private final I2C.Port i2cPort;
@@ -21,22 +20,23 @@ public class MaxbotixUltrasonicSensor extends SubsystemBase {
   private int lowByteTwosComplement;
 
   private double finalDistance;
-  private double reportedDistanceWithNegative;
   private double displacement = 0.0;
   private double distance;
 
-  private boolean isBusy = false;
+  private Timer i2cTimer = new Timer();
 
   /**
    * Constructor.
    *
-   * @param address The address of the sensor on the I2C bus.*/
-   
+   * @param address The address of the sensor on the I2C bus.
+   */
   public MaxbotixUltrasonicSensor(int address) {
-    i2cPort = I2C.Port.kOnboard;
+    i2cPort = I2C.Port.kMXP;
 
     // The RoboRIO uses 7 bit addressing, so the address here is 112
     i2cController = new I2C(i2cPort, address);
+    i2cTimer.reset();
+    i2cTimer.start();
   }
 
   @Override
@@ -47,10 +47,8 @@ public class MaxbotixUltrasonicSensor extends SubsystemBase {
     
     requestAndReadDistance();
 
-    if (reportedDistanceWithNegative != -1.0) {
-      finalDistance = distance - displacement;
-      SmartDashboard.putNumber("Range", finalDistance);
-    }
+    finalDistance = distance - displacement;
+    SmartDashboard.putNumber("Range", finalDistance);
 
   }
 
@@ -70,35 +68,27 @@ public class MaxbotixUltrasonicSensor extends SubsystemBase {
     /*
     Concatenate the highbyte (index 0) and lowbyte (index 1) 
     Concatenated bytes are in units of centimeters,
-    
     divided by 100 to get meters
-
     Roughly based off of the official Arduino library
     */
-    
     distance = (lowByteTwosComplement + highByteTwosComplement*256.0)/100.0;
   }
 
   private void requestAndReadDistance() {
-    if (!isBusy) {
-      isBusy = true;
-
-      Timer.delay(0.1); // For safety, if it has multiple calls
-      requestDistanceValue();
-      // Mfr. recommends 80 to 100 ms delay between request and read
-      Timer.delay(0.1);
+    if (canRead()) { // Mfr. recommends 80 to 100 ms delay between request and read
       readDistanceValue();
-
-      isBusy = false;
-
-    } else {
-      distance = -1.0;
+      requestDistanceValue();
+      i2cTimer.reset();
     }
-
   }
-    /** Gets the distance in meters that the sensor reports.()*/ 
+  
+  /** Gets the distance in meters that the sensor reports. */
   public double getDistance() {
     return finalDistance;
+  }
+
+  public boolean canRead() {
+    return i2cTimer.get() >= 0.1;
   }
 
 }
